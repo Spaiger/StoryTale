@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,18 +24,20 @@
                 <!-- <div class="NewStory">+</div> -->
                 <div class="title">Авторы</div>
             </div>
-            <div class="blocks">
-                <div class="stories" id="block1">s</div>
-                <div class="stories" id="block2">s</div>
-                <div class="stories" id="block3">s</div>
-                <div class="stories" id="block4">s</div>
-            </div>
-            <div class="blocks">
-                <div class="stories" id="block1">s</div>
-                <div class="stories" id="block2">s</div>
-                <div class="stories" id="block3">s</div>
-                <div class="stories" id="block4">s</div>
-            </div>
+            <?php
+                include '../../db.php';
+                $usersData = mysqli_query($connection, "select distinct nickname,id_user from user_data  order by rand() limit 8;");
+                for ($i=0; $i <2 ; $i++) { 
+                    echo '<div class="blocks">';
+                    for ($j=1; $j <=4 ; $j++) {
+                        $userNick = $usersData->fetch_row();
+
+                        echo '<a class="stories" href="../../profile.php?id_user='.$userNick[1].'" name="id_user" id="block'.$j.'">'.$userNick[0].'</a>';
+                    }
+                    
+                    echo '</div>';
+                }
+            ?>
         </div>
         <div class="footer"></div>
     </div>
