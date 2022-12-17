@@ -1,0 +1,5 @@
+@import url('bootstrap.css');
+body { background: #000; }
+section.container { position: absolute; top: 50px; bottom: 50px; width: 100%; overflow: auto;}
+section.container > section.item { position: relative; float: left; margin: 0; padding: 0; height: 140px;   overflow: hidden;}
+section.container > section.item > img {width: 100%;}
