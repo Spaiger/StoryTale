@@ -1,5 +1,6 @@
 <?php
 session_start();
+//var_dump($_SESSION);
 if (isset($_SESSION['user'])) {
     // header('Location: index.php');
     //session_unset();
@@ -37,7 +38,8 @@ if (isset($_SESSION['user'])) {
                 if (!isset($_SESSION['user'])) {
                     echo '<div class="button" id="but5" onclick="location.href=\'Pages/AuthorizationPage/authorization_page.php\';">Вход</div>';
                 } else {
-                    echo  '<div class="button" id="but5" onclick="location.href=\'Pages/RegistrationPage/registration_page.php\';">Профиль</div>';
+                    $id = $_SESSION['user'];
+                    echo  '<div class="button" id="but5" onclick="location.href=\'Pages/ProfilePage/profile.php?id_user='.$id.'\';">Профиль</div>';
                 }
 
                 ?>

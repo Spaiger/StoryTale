@@ -27,7 +27,11 @@
             if (!password_verify($_POST["password"], $user['password'])) {
                 $errorArray[] = (array("IncorrectPassword" => false));
             } else {
-                $_SESSION["user"] = $userEmail;
+                $idRes = mysqli_query($connection, "select id_user from user_data where email = '$userEmail'");
+                $id = $idRes->fetch_assoc();
+               
+                $_SESSION["user"] = $id["id_user"];
+            
 
                 header('Location: ../../index.php');
             }

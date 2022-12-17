@@ -78,7 +78,10 @@ if (count($errorArray) == 0) {
 
     if ($res) {
      
-      $_SESSION["user"] = $userEmail;
+      
+      $idRes = mysqli_query($connection, "select id_user from user_data where email = '$userEmail'");
+      $id = $idRes->fetch_assoc();
+      $_SESSION["user"] = $id[0];
       header('Location: ../../index.php');
     }
   }
