@@ -53,6 +53,12 @@
                 <input class="button" id="au" name="submit_button"  type="submit" value="Регистрация" style="border: none;">
                 
             </form>
+            <?php 
+                if(isset($_SESSION['msg'])){
+                    echo $_SESSION['msg'];
+                }
+            
+            ?>
         </div>
         <div class="footer"></div>
     </div>

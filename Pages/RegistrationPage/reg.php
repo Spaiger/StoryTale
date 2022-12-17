@@ -2,7 +2,7 @@
 session_start();
 
 include '../../db.php';
-
+unset($_SESSION['msg']);
 //echo var_dump($_POST);
 
 
@@ -26,7 +26,7 @@ if (!isset($_POST["birthday"])) {
 
 if (count($errorArray) > 0) {
   $connection->close();
-  
+  echo json_encode($errorArray);
   header("Location: registration_page.php");
   die;
 }
@@ -39,12 +39,15 @@ if (count($errorArray) == 0) {
   $find = mysqli_query($connection, "select * from user_data where email = '$userEmail'");
 
   if (!ValidateUserName($userNickname)) {
+    $_SESSION['msg'] = "Неправильное имя пользователя";
     $errorArray[] = (array("validUserName" => false));
   }
   if (!ValidateUserEmail($userEmail)) {
+    $_SESSION['msg'] = "Неправильный email адрес";
     $errorArray[] = (array("validUserEmail" => false));
   }
   if (!ValidateUserBirthday($userBirthday)) {
+    $_SESSION['msg'] = "Неправильная дата рождения";
     $errorArray[] = (array("validUserBirthday" => false));
   }
   if (count($errorArray) > 0) {
@@ -58,17 +61,16 @@ if (count($errorArray) == 0) {
   $find = mysqli_query($connection, "select * from user_data where email = '$userEmail'");
   $user = $find->fetch_assoc();
   if (!($_POST["password"] == $_POST["password_confirm"])) {
-    $errorArray[] = array("PasswordIsEqual" => false);
+    $_SESSION['msg'] = "Пароли не совпадают";
+    $connection->close();
+    header("Location: registration_page.php");
   } else if (isset($user['email'])) {
-    $errorArray[] = array("EmailIsFree" => false);
+    $_SESSION['msg'] = "Эта почта уже используется";
+    $connection->close();
+    header("Location: registration_page.php");
   } else {
 
-    if (count($errorArray) > 0) {
-     
-      $connection->close();
-      header("Location: registration_page.php");
-      die;
-    }
+   
 
     $userPassword = password_hash($_POST["password"], PASSWORD_BCRYPT);
     //$userBirthday = ReverseBirthday($userBirthday);
@@ -81,7 +83,8 @@ if (count($errorArray) == 0) {
       
       $idRes = mysqli_query($connection, "select id_user from user_data where email = '$userEmail'");
       $id = $idRes->fetch_assoc();
-      $_SESSION["user"] = $id[0];
+      $_SESSION["user"] = $id["id_user"];
+      unset($_SESSION['msg']);
       header('Location: ../../index.php');
     }
   }
@@ -109,7 +112,7 @@ function ReverseBirthday($birthday)
 function ValidateUserName($fn)
 {
 
-  $res1 = preg_match('/^([а-яА-ЯЁёa-zA-Z_]+)$/u', $fn);
+  $res1 = preg_match('/^([а-яА-ЯЁё0-9a-zA-Z_]+)$/u', $fn);
   
  
   return $res1;

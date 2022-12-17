@@ -33,6 +33,12 @@ if (isset($_SESSION['user'])) {
             </form>
             <div class="button" id="reg" onclick="location.href='../RegistrationPage/registration_page.php';">Регистрация</div>
         </div>
+        <?php 
+                if(isset($_SESSION['msg'])){
+                    echo $_SESSION['msg'];
+                }
+            
+            ?>
         <div class="footer"></div>
     </div>
 </body>
