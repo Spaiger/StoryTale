@@ -26,7 +26,7 @@
                     for ($j=1; $j <=4 ; $j++) {
                         $userNick = $usersData->fetch_row();
 
-                        echo '<a class="stories" href="../../profile.php?id_user='.$userNick[1].'" name="id_user" id="block'.$j.'">'.$userNick[0].'</a>';
+                        echo '<a class="stories" href="../ProfilePage/profile.php?id_user='.$userNick[1].'" name="id_user" id="block'.$j.'">'.$userNick[0].'</a>';
                     }
                     
                     echo '</div>';
