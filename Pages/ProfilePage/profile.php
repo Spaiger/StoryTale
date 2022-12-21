@@ -32,7 +32,7 @@ echo $id;
             </div>
             <div class="profile">
                 <div class="desc">
-                    <div id="avatar"></div>
+                    <div id="avatar"><img src=""></div>
                     <div id="followers">
                         <p>Подписчики:</p>
                         <p>123 &#9829;</p>
