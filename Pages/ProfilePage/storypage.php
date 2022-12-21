@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,15 +12,10 @@
 </head>
 <body>
     <script src="MainPage.js"></script>
+
     <div class="con">
         <div class="content">
-            <div class="appbar">
-                <div class="button" id="but1" onclick="location.href='../GenrePage/genre_page.php';">Жанры</div>
-                <div class="button" id="but2" onclick="location.href='../AuthorsPage/authors_page.php';">Авторы</div>
-                <div class="button" id="but3" onclick="location.href='../PopularPage/popular_page.php';">Популярное</div>
-                <div class="button" id="but4" onclick="location.href='../RandomWorkPage/random_work_page.php';">Случайная работа</div>
-                <div class="button" id="but5" onclick="location.href='../AuthorizationPage/authorization_page.php';">Профиль</div>
-            </div>
+        <?php include '../appbar.php'; ?>
             <div class="input"><input type="text" class="search"></div>
             <div class="pipi">
                 <div class="NewStory">+</div>

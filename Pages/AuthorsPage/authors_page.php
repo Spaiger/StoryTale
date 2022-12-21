@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authors</title>
+    <title>Авторы</title>
     <link rel="stylesheet" href="AuthorsPage.css">
 </head>
 <body>
@@ -26,7 +26,7 @@
                     for ($j=1; $j <=4 ; $j++) {
                         $userNick = $usersData->fetch_row();
 
-                        echo '<a class="stories" href="../ProfilePage/profile.php?id_user='.$userNick[1].'" name="id_user" id="block'.$j.'">'.$userNick[0].'</a>';
+                        echo '<div class="stories" onclick="location.href=\'../ProfilePage/profile.php?id_user='.$userNick[1].'\'" name="id_user" id="block'.$j.'">'.$userNick[0].'</div>';
                     }
                     
                     echo '</div>';
