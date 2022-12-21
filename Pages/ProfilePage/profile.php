@@ -1,7 +1,16 @@
 <?php
-var_dump($_GET);
+session_start();
+include '../../db.php';
 $id = $_GET["id_user"];
-echo $id;
+
+$dataName = mysqli_query($connection, "select nickname from user_data where id_user = '$id'");
+$name = $dataName->fetch_array()["nickname"];
+
+$req = mysqli_query($connection, "select avatar,count_publish, followers from user_profile_data where id_user = '$id'");
+$dataProfile = $req->fetch_array();
+$avatar = $dataProfile["avatar"];
+$count_publish = $dataProfile["count_publish"];
+$followers = $dataProfile["followers"];
 
 ?>
 
@@ -11,7 +20,7 @@ echo $id;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Профиль</title>
+    <title><?php echo $name ?></title>
     <link rel="stylesheet" href="ProfilePage.css">
 </head>
 <body>
@@ -23,11 +32,11 @@ echo $id;
                 <div class="button" id="but2" onclick="location.href='../AuthorsPage/authors_page.php';">Авторы</div>
                 <div class="button" id="but3" onclick="location.href='../PopularPage/popular_page.php';">Популярное</div>
                 <div class="button" id="but4" onclick="location.href='../RandomWorkPage/random_work_page.php';">Случайная работа</div>
-                <div class="button" id="but5" onclick="location.href='../AuthorizationPage/authorization_page.php';">Профиль</div>
+               <!-- <div class="button" id="but5" onclick="location.href='../AuthorizationPage/authorization_page.php';">Профиль</div> -->
             </div>
             <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
-                <div class="button" onclick="location.href='profileworkspage.php';">Все работы</div>
+              <?php echo '<div class="button" onclick="location.href=\'profileworkspage.php?id_user=' .$id . '\'";>'?>Все работы</div>
                 <div class="NewStory">+</div>
             </div>
             <div class="profile">
@@ -35,12 +44,18 @@ echo $id;
                     <div id="avatar"><img src=""></div>
                     <div id="followers">
                         <p>Подписчики:</p>
-                        <p>123 &#9829;</p>
+                        <p><?php echo $followers ?> &#9829;</p>
                     </div>
                 </div>
                 <div class="name">
-                    <p id="username">Имя пользователя</p>
-                    <p id="workscount">Количество работ: <a id="count" href="profileworkspage.php">12</a></p>
+                    <p id="username">Имя пользователя: <?php echo $name ?></p>
+                    <p id="workscount">Количество работ: 
+                        <?php
+                        echo '<a id="count" href="profileworkspage.php?id_user=' .$id . '">';
+                        
+                         echo $count_publish ?>
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
