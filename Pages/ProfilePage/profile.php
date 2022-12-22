@@ -37,7 +37,9 @@ $followers = $dataProfile["followers"];
             <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
               <?php echo '<div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id . '\'";>Все работы</div>';?>
-                <div class="NewStory"  onclick="location.href='../StoryCreatePages/story_create_main_page.php';">+</div>
+                <div class="NewStory"  onclick="location.href='../StoryCreatePages/story_create_main_page.php';">
+                 +
+            </div>
             </div>
             <div class="profile">
                 <div class="desc">
