@@ -87,7 +87,8 @@ if (count($errorArray) == 0) {
       $_SESSION["user"] = $id;
       unset($_SESSION['msg']);
       mysqli_query($connection, "insert into user_profile_data (id_user) value ('$id');");
-      header('Location: ../../index.php');
+      //var_dump($res);
+     header('Location: ../../index.php');
     }
   }
 }

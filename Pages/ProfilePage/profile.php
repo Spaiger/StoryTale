@@ -3,8 +3,8 @@ session_start();
 include '../../db.php';
 
 
-var_dump($_GET);
-var_dump($_SESSION);
+//var_dump($_GET);
+//var_dump($_SESSION);
 $equel = false;
 if(isset($_SESSION["user"]) && isset($_GET["id_user"]) ){
     $equel = $_GET["id_user"] == $_SESSION["user"];
@@ -17,12 +17,15 @@ if(isset($_GET["id_user"])){
         header("location: ../../logout.php");
     }
 }
-$id = intval( $_GET["id_user"]);
+$id = $_GET["id_user"];
 $dataName = mysqli_query($connection, "select nickname from user_data where id_user = '$id'");
 $name = $dataName->fetch_array()["nickname"];
 
 $req = mysqli_query($connection, "select avatar,count_publish, followers from user_profile_data where id_user = '$id'");
-$dataProfile = $req->fetch_array();
+
+
+$dataProfile = $req->fetch_assoc();
+
 $avatar = $dataProfile["avatar"];
 $count_publish = $dataProfile["count_publish"];
 $followers = $dataProfile["followers"];
@@ -80,7 +83,9 @@ $followers = $dataProfile["followers"];
                 </div>
             </div>
         </div>
-        <div class="footer"></div>
+        <?php 
+        include "../footer.php";
+        ?>
     </div>
 </body>
 </html>
