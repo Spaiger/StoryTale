@@ -3,10 +3,9 @@ session_start();
 $id = null;
 if (isset($_SESSION['user'])) {
     $id = $_SESSION['user'];
-}else{
-    
+} else {
+
     header('Location: ../../index.php');
-    
 }
 ?>
 <!DOCTYPE html>
@@ -27,28 +26,34 @@ if (isset($_SESSION['user'])) {
             <div class="title">
                 <div class="text">Создать</div>
             </div>
-            <form action="createMain.php" method="post">
-                <input type="hidden" name="id_user" value="<?php echo $id ?>">
-                <div class="in">
-                    <div class="ni2">Обложка<input type="file" class="input" id="image" name="img" ></div>
-                </div>
-                <div class="in">
-                    <div class="ni2">Назание<input type="text" name="name" class="input" id="name"  required></div>
-                </div>
-                <div class="in">
-                    <div class="ni2">
-                        Жанр
-                        <select name="genre" class="input" id="genre">
-                            <option value="loh">Loh</option>
-                            <option value="neloh">NeLoh</option>
-                        </select>
+            <div class="form">
+                <form action="createMain.php" method="post" id="usrform" class="usrform">
+                    <input type="hidden" name="id_user" value="<?php echo $id ?>">
+                    <div class="in">
+                        <div class="ni2">Обложка<input type="file" class="input" id="image" name="img"></div>
                     </div>
+                    <div class="in">
+                        <div class="ni2">Назание<input type="text" name="name" class="input" id="name" required></div>
+                    </div>
+                    <div class="in">
+                        <div class="ni2">
+                            Жанр
+                            <select name="genre" class="input" id="genre">
+                                <option value="loh">Loh</option>
+                                <option value="neloh">NeLoh</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="in">
+                        <div class="ni2">Описание<input style=" background-color:#ffffff; height: 8vh" type="text" name="description" class="input" id="description" required></div>
+                    </div>
+                </form>
+                <div class="commentWrap">
+                    <div class="ni2">Содержимое<textarea name="comment" class="comment" form="usrform" required></textarea></div>
                 </div>
-                <div class="in">
-                    <div class="ni2">Описание<input type="text" name="description" class="input" id="description" required></div>
-                </div>
-                <input class="button" id="au" type="submit" value="Создать историю" style="border: none;">
-            </form>
+            </div>
+
+            <input class="button" id="au" form="usrform" type="submit" value="Создать историю" style="border: none;">
         </div>
         <div class="footer"></div>
     </div>
