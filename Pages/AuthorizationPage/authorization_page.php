@@ -44,13 +44,15 @@ if (isset($_SESSION['user'])) {
             </div>
 
         </div>
-        <?php
-        if (isset($_SESSION['msg'])) {
-            echo $_SESSION['msg'];
-        }
-
+        <?php 
+                if(isset($_SESSION['msg'])){
+                    echo $_SESSION['msg'];
+                }
+            
+            ?>
+        <?php 
+        include "../footer.php";
         ?>
-        <?php include "../footer.php" ?>
     </div>
 </body>
 

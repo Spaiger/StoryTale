@@ -17,6 +17,7 @@ if (isset($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Создать историю</title>
     <link rel="stylesheet" href="authorization_page.css">
+    <link rel="stylesheet" href="../footer.css">
 </head>
 
 <body>
@@ -55,7 +56,9 @@ if (isset($_SESSION['user'])) {
 
             <input class="button" id="au" form="usrform" type="submit" value="Создать историю" style="border: none;">
         </div>
-        <div class="footer"></div>
+        <?php 
+        include "../footer.php";
+        ?>
     </div>
 </body>
 

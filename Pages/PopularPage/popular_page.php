@@ -9,13 +9,19 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Популярное</title>
     <link rel="stylesheet" href="PopularPage.css">
+    <link rel="stylesheet" href="../footer.css">
+    <?php
+    if (isset($_SESSION['user'])) {
+        echo '<link rel="stylesheet" href="../../styles/austyle.css">';
+    }
+    ?>
 </head>
 <body>
     <script src="MainPage.js"></script>
     <div class="con">
         <div class="content">
         <?php include '../appbar.php'; ?>
-            <div class="input"><input type="text" class="search"></div>
+            <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
                 <div class="NewStory">+</div>
                 <div class="title">Популярное</div>
@@ -33,7 +39,9 @@ session_start();
                 <div class="stories" id="block4">s</div>
             </div> -->
         </div>
-        <div class="footer"></div>
+        <?php 
+        include "../footer.php";
+        ?>
     </div>
 </body>
 </html>
