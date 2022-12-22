@@ -1,13 +1,31 @@
 <?php
 session_start();
 include '../../db.php';
-$id = $_GET["id_user"];
 
+
+//var_dump($_GET);
+//var_dump($_SESSION);
+$equel = false;
+if(isset($_SESSION["user"]) && isset($_GET["id_user"]) ){
+    $equel = $_GET["id_user"] == $_SESSION["user"];
+    if( intval( $_GET["id_user"])!= $_GET["id_user"]){
+        header("location: ../../logout.php");
+    }
+}
+if(isset($_GET["id_user"])){
+    if( intval( $_GET["id_user"])!= $_GET["id_user"]){
+        header("location: ../../logout.php");
+    }
+}
+$id = $_GET["id_user"];
 $dataName = mysqli_query($connection, "select nickname from user_data where id_user = '$id'");
 $name = $dataName->fetch_array()["nickname"];
 
 $req = mysqli_query($connection, "select avatar,count_publish, followers from user_profile_data where id_user = '$id'");
-$dataProfile = $req->fetch_array();
+
+
+$dataProfile = $req->fetch_assoc();
+
 $avatar = $dataProfile["avatar"];
 $count_publish = $dataProfile["count_publish"];
 $followers = $dataProfile["followers"];
@@ -22,6 +40,7 @@ $followers = $dataProfile["followers"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $name ?></title>
     <link rel="stylesheet" href="ProfilePage.css">
+    <link rel="stylesheet" href="../footer.css">
 </head>
 <body>
     <script src="MainPage.js"></script>
@@ -37,7 +56,12 @@ $followers = $dataProfile["followers"];
             <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
               <?php echo '<div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id . '\'";>Все работы</div>';?>
-                <div class="NewStory"  onclick="location.href='../StoryCreatePages/story_create_main_page.php';">+</div>
+              <?php 
+              if($equel) echo'
+              <div class="NewStory"  onclick="location.href=\'../StoryCreatePages/story_create_main_page.php\';">
+                 +
+                </div>'
+                ?>
             </div>
             <div class="profile">
                 <div class="desc">
@@ -59,7 +83,9 @@ $followers = $dataProfile["followers"];
                 </div>
             </div>
         </div>
-        <div class="footer"></div>
+        <?php 
+        include "../footer.php";
+        ?>
     </div>
 </body>
 </html>

@@ -66,13 +66,13 @@ body{
     background-color: #7D5846;
 }
 
-#but2, #but4{
-    margin-left: 3%;
-    margin-right: 3%;
+#but2, #but4{ /*Для авторизованного аккаунта*/
+    margin-left: 8.3%;
+    margin-right: 8.3%;
 }
 
-#but1{
-    margin-left: 4%;
+#but1{ /*Для авторизованного аккаунта*/
+    margin-left: 6.3%;
 }
 
 #but5{

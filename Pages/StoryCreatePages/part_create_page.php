@@ -10,6 +10,7 @@ var_dump($_GET);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authorization Page</title>
     <link rel="stylesheet" href="authorization_page.css">
+    <link rel="stylesheet" href="../footer.css">s
 </head>
 <body>
     <script src="MainPage.js"></script>
@@ -22,7 +23,9 @@ var_dump($_GET);
                 <input class="button" id="au" type="submit" value="Войти" style="border: none;">
             </form>
         </div>
-        <div class="footer"></div>
+        <?php 
+        include "../footer.php";
+        ?>
     </div>
 </body>
 </html>

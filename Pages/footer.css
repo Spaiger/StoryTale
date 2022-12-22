@@ -1,0 +1,35 @@
+.footer{
+    position:fixed;
+    width:80vw;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-top: 50vh;
+    height: 10vh;
+    background-color: #7D5846;
+    flex: 0 0 auto;
+    border-radius: 1vh 1vh 0px 0px;
+    bottom: 0;
+    display: flex;
+}
+
+.news{
+    width: 37vw;
+    height: 10vh;
+}
+
+.social{
+    /* padding-left: 40vw; */
+    width: 41vw;
+    height: 10vh;
+}
+
+.link:active{
+    text-decoration: none;
+}
+
+.link{
+    font-size: 1.5vw;
+    margin-left: 2vw;
+    color: #EFE8E2;
+    text-decoration: none;
+}

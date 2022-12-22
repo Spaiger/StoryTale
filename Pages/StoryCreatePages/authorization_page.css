@@ -82,7 +82,7 @@ body{
     /* align-self: center; */
 }
 .form{
-    max-height: 600px;
+    max-height: 500px;
     min-width: 100px;
     display: flex;
 }

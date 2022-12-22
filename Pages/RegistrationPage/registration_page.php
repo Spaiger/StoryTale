@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
     <link rel="stylesheet" href="RegistrationPage.css">
+    <link rel="stylesheet" href="../footer.css">
 </head>
 <body>
     <script src="MainPage.js"></script>
@@ -36,22 +37,22 @@
                 </div>
                 <div class="in">
                     <div class="ni2">
-                        <input type="password" name="password_confirm" class="input" id="password" placeholder="Повторите пароль" required>
+                        <input type="password" name="password_confirm" class="input" id="repassword" placeholder="Повторите пароль" required>
                     </div>
                 </div>
                 <div class="in">
                     <div class="ni2">
-                        <input type="date" name="birthday" class="input" id="password" placeholder="Дата рождения" required>
+                        <input type="date" name="birthday" class="input" id="bir" placeholder="Дата рождения" required>
                     </div>
                 </div>
                 <div class="in">
-                    <div class="ni2">
+                    <div class="ni2" id = "check">
                         <input type="checkbox" placeholder="Дата рождения" required>Я прочитал и согласен с <a href="../AuthorsPage/authors_page.html">правилами сайта</a>, <a href="../AuthorsPage/authors_page.html">пользовательским соглашением</a> и <a href="../AuthorsPage/authors_page.html">политикой в отношении обработки персональных данных</a>. </input>
                     </div>
                 </div>
-                
-                <input class="button" id="au" name="submit_button"  type="submit" value="Регистрация" style="border: none;">
-                
+                <div>
+                    <input class="button" id="au" name="submit_button"  type="submit" value="Регистрация" style="border: none;">
+                </div>
             </form>
             <?php 
                 if(isset($_SESSION['msg'])){
@@ -60,7 +61,9 @@
             
             ?>
         </div>
-        <div class="footer"></div>
+        <?php 
+        include "../footer.php";
+        ?>
     </div>
 </body>
 </html>
