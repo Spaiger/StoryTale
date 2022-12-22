@@ -1,17 +1,20 @@
 .content{
     display: flex;
     flex-direction: column;
+    min-width: 600px;
+    /*min-height: 600px;*/
     position: absolute;
     background-color: #FFEFCB;
     backdrop-filter: blur(10px);
-    margin-right: 10.9375%;
-    margin-left: 10.9375%;
-    margin-top: 5.75221238938053%;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-top: 5vh;
     align-items: center;
-    height: 88.49557522123893%;
-    width: 78.125%;
+    height:85vh;
+    width: 80vw;
     border-radius: 10px 10px 0px 0px;
     flex: 1 0 auto;
+    min-height: 615px;
 }
 
 body{
@@ -20,18 +23,22 @@ body{
     background-color: #BA8C76;
     margin: 0;
     padding: 0;
+    min-height: 600px;
 }
 
 .footer{
-    position:absolute;
-    width:78.125%;
-    margin-right: 10.9375%;
-    margin-left: 10.9375%;
+    position:fixed;
+    min-width: 600px;
+    width:80vw;
+    margin-right: 10vw;
+    margin-left: 10vw;
     margin-top: 50%;
-    height: 9.734513274336283%;
+    height: 10vh;
     background-color: #7D5846;
     flex: 0 0 auto;
     border-radius: 1vh 1vh 0px 0px;
+    bottom: 0;
+    
 }
 
 .con{
@@ -74,9 +81,27 @@ body{
     border-radius: 5px;
     /* align-self: center; */
 }
-
+.form{
+    max-height: 600px;
+    min-width: 100px;
+    display: flex;
+}
+.usrform{
+    min-width: 100px;
+    max-width: 600px;
+}
+textarea{
+    resize: none;
+}
+.comment{
+    max-height: 400px;
+    min-width: 100px;
+    width: 30vw;
+    height: 50vh;
+   
+}
 .title{ 
-    height: 30%;
+    height: 10vh;
     width: 100%;
     /* margin-top: 5.875%;
     margin-bottom: 5.875%; */
@@ -88,7 +113,7 @@ body{
 }
 
 #au{
-    margin-top: 3%;
+    margin-top: 3vh;
 }
 
 #reg{
