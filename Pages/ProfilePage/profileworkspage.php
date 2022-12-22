@@ -11,6 +11,7 @@ include '../../db.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Все работы</title>
     <link rel="stylesheet" href="GenrePage.css">
+    <link rel="stylesheet" href="../footer.css">
     <script src="jquery-3.6.2.min.js" type="text/javascript">
        
    </script>
@@ -52,10 +53,14 @@ include '../../db.php';
             //var_dump($res[6]);
             if($res){
                 echo '<div class="blocks">';
-                for ($i=1; $i <= min(count($ans),4); $i++) {
+                for ($i=1; $i <= count($ans); $i++) {
                     echo ' <div class="stories" id="block'.$i.'" onclick="location.href=\'../StoryCreatePages/edit_story_page.php?id_story='.$ans[$i-1]["id_story"].'&id_user=5;\'">'.$ans[$i-1]["name"].'</div>';
                 }
+               
+                
+
                 echo '</div>';
+                
             }
             ?>
             
@@ -70,7 +75,7 @@ include '../../db.php';
                 <div class="stories" id="block4">s</div>
             </div> -->
         </div>
-        <div class="footer"></div>
+       <?php include "../footer.php"; ?>
     </div>
 </body>
 
