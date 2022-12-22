@@ -13,6 +13,7 @@ if (isset($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authorization Page</title>
     <link rel="stylesheet" href="authorization_page.css">
+    <link rel="stylesheet" href="../footer.css">
 </head>
 
 <body>
@@ -39,7 +40,9 @@ if (isset($_SESSION['user'])) {
                 }
             
             ?>
-        <div class="footer"></div>
+        <?php 
+        include "../footer.php";
+        ?>
     </div>
 </body>
 

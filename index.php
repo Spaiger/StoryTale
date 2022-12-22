@@ -15,11 +15,11 @@ if (isset($_SESSION['user'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная страница</title>
+    <link rel="stylesheet" href="MainPage.css">
+    <link rel="stylesheet" href="Pages/footer.css">
     <?php
-    if (!isset($_SESSION['user'])) {
-        echo '<link rel="stylesheet" href="MainPage.css">';
-    } else {
-        echo '<link rel="stylesheet" href="AuMainPage.css">';
+    if (isset($_SESSION['user'])) {
+        echo '<link rel="stylesheet" href="styles/austyle.css">';
     }
     ?>
 
@@ -66,7 +66,9 @@ if (isset($_SESSION['user'])) {
                 <div class="stories" id="block4">s</div>
             </div>
         </div>
-        <div class="footer"></div>
+        <?php 
+        include "Pages/footer.php";
+        ?>
     </div>
 </body>
 

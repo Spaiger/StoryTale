@@ -8,13 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Авторы</title>
     <link rel="stylesheet" href="AuthorsPage.css">
+    <link rel="stylesheet" href="../footer.css">
+    <?php
+    if (isset($_SESSION['user'])) {
+        echo '<link rel="stylesheet" href="../../styles/austyle.css">';
+    }
+    ?>
 </head>
 <body>
     <script src="MainPage.js"></script>
     <div class="con">
         <div class="content">
            <?php include '../appbar.php'; ?>
-            <div class="input"><input type="text" class="search"></div>
+            <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
                 <!-- <div class="NewStory">+</div> -->
                 <div class="title">Авторы</div>
@@ -34,7 +40,9 @@
                 }
             ?>
         </div>
-        <div class="footer"></div>
+        <?php 
+        include "../footer.php";
+        ?>
     </div>
 </body>
 </html>

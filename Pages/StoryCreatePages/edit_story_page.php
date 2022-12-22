@@ -37,6 +37,7 @@ $avatar = $res["avatar"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Редактировать историю</title>
     <link rel="stylesheet" href="authorization_page.css">
+    <link rel="stylesheet" href="../footer.css">
 </head>
 
 <body>
@@ -84,7 +85,9 @@ $avatar = $res["avatar"];
 
             <input class="button" id="au" form="usrform" type="submit" value="Редактировать историю" style="border: none;">
         </div>
-        <div class="footer"></div>
+        <?php 
+        include "../footer.php";
+        ?>
     </div>
 </body>
 

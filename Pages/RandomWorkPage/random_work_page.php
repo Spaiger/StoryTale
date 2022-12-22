@@ -9,6 +9,11 @@
     <title>RandomWork</title>
     <link rel="stylesheet" href="RandomWorkPage.css">
     <link rel="stylesheet" href="../footer.css">
+    <?php
+    if (isset($_SESSION['user'])) {
+        echo '<link rel="stylesheet" href="../../styles/austyle.css">';
+    }
+    ?>
 </head>
 
 <body>
@@ -18,7 +23,7 @@
             <?php
             include "../appbar.php";
             ?>
-            <div class="input"><input type="text" class="search"></div>
+            <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
                 <div class="NewStory">+</div>
                 <div class="title">Случайные работы</div>
@@ -61,7 +66,9 @@
                 <div class="stories" id="block4">s</div>
             </div> -->
         </div>
-        <?php include '../footer.php' ?>
+        <?php 
+        include "../footer.php";
+        ?>
     </div>
 </body>
 
