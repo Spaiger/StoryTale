@@ -7,7 +7,7 @@ if (!isset($_SESSION['user'])) {
     if ($_SESSION['user'] != (int)$_GET["id_user"]) {
         echo "fdfdfdfd";
 
-        //header("location: ../../index.php");
+        header("location: ../../index.php");
     }
 }
 
