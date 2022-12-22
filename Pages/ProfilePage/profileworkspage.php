@@ -53,7 +53,7 @@ include '../../db.php';
             if($res){
                 echo '<div class="blocks">';
                 for ($i=1; $i <= min(count($ans),4); $i++) {
-                    echo ' <div class="stories" id="block'.$i.'" onclick="location.href=\'storypage.php?id_story='.$ans[$i-1]["id_story"].';\'">'.$ans[$i-1]["name"].'</div>';
+                    echo ' <div class="stories" id="block'.$i.'" onclick="location.href=\'../StoryCreatePages/edit_story_page.php?id_story='.$ans[$i-1]["id_story"].'&id_user=5;\'">'.$ans[$i-1]["name"].'</div>';
                 }
                 echo '</div>';
             }
