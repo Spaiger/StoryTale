@@ -36,7 +36,7 @@ $avatar = $res["avatar"];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Редактировать историю</title>
-    <link rel="stylesheet" href="authorization_page.css">
+    <link rel="stylesheet" href="storycreate.css">
     <link rel="stylesheet" href="../footer.css">
 </head>
 
@@ -67,7 +67,7 @@ $avatar = $res["avatar"];
                     </div>
                     <div class="in">
                         <div class="ni2">
-                            Жанр
+                            <p class="kostil">Жанр</p>
                             <select name="genre" class="input" id="genre">
                                 <option value="loh" <?php if ($genre == "loh") echo 'selected' ?>>Loh</option>
                                 <option value="neloh" <?php if ($genre == "neloh") echo 'selected' ?>>NeLoh</option>
