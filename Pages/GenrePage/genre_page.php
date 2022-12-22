@@ -23,14 +23,14 @@ session_start();
             <?php include '../appbar.php' ?>
             <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
-                <div class="NewStory">+</div>
+                <!-- <div class="NewStory">+</div> -->
                 <div class="title">Жанры</div>
             </div>
             <div class="blocks">
-                <div class="stories" id="block1">s</div>
-                <div class="stories" id="block2">s</div>
-                <div class="stories" id="block3">s</div>
-                <div class="stories" id="block4">s</div>
+                <div class="stories" id="block1">Jopa1</div>
+                <div class="stories" id="block2">Jopa2</div>
+                <div class="stories" id="block3">Jopa3</div>
+                <div class="stories" id="block4">jopa4</div>
             </div>
             <!-- <div class="blocks">
                 <div class="stories" id="block1">s</div>

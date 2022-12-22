@@ -23,7 +23,7 @@ session_start();
         <?php include '../appbar.php'; ?>
             <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
-                <div class="NewStory">+</div>
+                <!-- <div class="NewStory">+</div> -->
                 <div class="title">Популярное</div>
             </div>
             <div class="blocks">

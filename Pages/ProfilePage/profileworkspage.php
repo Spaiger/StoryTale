@@ -15,7 +15,7 @@ if (isset($_GET["id_user"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Все работы</title>
-    <link rel="stylesheet" href="GenrePage.css">
+    <link rel="stylesheet" href="profileworks.css">
     <link rel="stylesheet" href="../footer.css">
     <script src="jquery-3.6.2.min.js" type="text/javascript">
        
@@ -38,7 +38,7 @@ if (isset($_GET["id_user"])) {
     <div class="con">
         <div class="content">
             <?php include '../appbar.php'; ?>
-            <div class="input"><input type="text" class="search"></div>
+            <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
                 <div class="NewStory">+</div>
                 <div class="title">Все работы</div>

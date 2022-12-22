@@ -25,7 +25,7 @@
             ?>
             <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
-                <div class="NewStory">+</div>
+                <!-- <div class="NewStory">+</div> -->
                 <div class="title">Случайные работы</div>
             </div>
             <?php

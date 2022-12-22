@@ -51,7 +51,7 @@ $followers = $dataProfile["followers"];
                 <div class="button" id="but2" onclick="location.href='../AuthorsPage/authors_page.php';">Авторы</div>
                 <div class="button" id="but3" onclick="location.href='../PopularPage/popular_page.php';">Популярное</div>
                 <div class="button" id="but4" onclick="location.href='../RandomWorkPage/random_work_page.php';">Случайная работа</div>
-               <!-- <div class="button" id="but5" onclick="location.href='../AuthorizationPage/authorization_page.php';">Профиль</div> -->
+                <div class="button" id="but5" onclick="location.href=\'logout.php\';">Выйти</div>
             </div>
             <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
@@ -72,7 +72,7 @@ $followers = $dataProfile["followers"];
                     </div>
                 </div>
                 <div class="name">
-                    <p id="username">Имя пользователя: <?php echo $name ?></p>
+                    <p id="username"><?php echo $name ?></p>
                     <p id="workscount">Количество работ: 
                         <?php
                         echo '<a id="count" href="profileworkspage.php?id_user=' .$id . '">';
