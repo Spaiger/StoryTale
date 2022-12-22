@@ -4,16 +4,25 @@
     position: absolute;
     background-color: #FFEFCB;
     backdrop-filter: blur(10px);
-    margin-right: 10.9375%;
-    margin-left: 10.9375%;
-    margin-top: 5.75221238938053%;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-top: 5vh;
     align-items: center;
-    height: 88.49557522123893%;
-    width: 78.125%;
+    height: 88vh;
+    width: 80vw;
     border-radius: 10px 10px 0px 0px;
     flex: 1 0 auto;
+    top: 0;
+    justify-content: center;
 }
 
+.form{
+   
+    width: 20vw;
+    align-items: center;
+    text-align: center;
+   /* justify-content: center;*/
+}
 body{
     height: 100%;
     width: 100%;
@@ -66,7 +75,7 @@ body{
 
 .input{
     height: 50%;
-    width: 100%;
+    width: 90%;
     box-sizing: content-box;
     border: none;
     background-color:#EFE8E2;
@@ -76,17 +85,25 @@ body{
 }
 
 .title{ 
-    height: 30%;
+    height: 10vh;
     width: 100%;
     /* margin-top: 5.875%;
     margin-bottom: 5.875%; */
 }
 
 .in{
-    height: 17.5%;
-    width: 30%;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+    width: 30vh;
 }
-
+.inputField{
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    
+    width: 10vw;
+}
 #au{
     margin-top: 3%;
 }

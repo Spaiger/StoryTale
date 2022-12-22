@@ -20,10 +20,24 @@ if (isset($_POST["comment"]) && isset($_POST["name"]) && isset($_POST["id_user"]
         $id_story = $id+1;
         
     }
-   
-    mysqli_query($connection, "insert into main_story_data (id_story,id_user,name,genre,description,comment,avatar) values ('$id_story','$id_user','$name','$genre','$description','$comment','$ava');");
-    mysqli_query($connection, "insert into part_story_data value('$id_story')");
-    mysqli_query($connection, "update  user_profile_data set count_publish = count_publish+1 where id_user =('$id_user')");
+    $vowels = array("</", "<", ">","`","\"","'","--","*",";");
+    $name =str_replace($vowels, "", $name);
+    $description =str_replace($vowels, "", $description);
+    $comment = str_replace($vowels, "",$comment);
+    $stmt = $connection->prepare("insert into main_story_data (id_story,id_user,name,genre,description,comment,avatar) values (?,?,?,?,?,?,?);");
+    $stmt->bind_param("iisssss", $id_story,$id_user,$name,$genre,$description,$comment,$ava);
+    $stmt->execute();
+    //mysqli_query($connection, "insert into main_story_data (id_story,id_user,name,genre,description,comment,avatar) values ('$id_story','$id_user','$name','$genre','$description','$comment','$ava');");
+    $stmt = null;
+    $stmt = $connection->prepare("insert into part_story_data value(?)");
+    $stmt->bind_param("i", $id_story);
+    $stmt->execute();
+    //mysqli_query($connection, "insert into part_story_data value('$id_story')");
+    $stmt = null;
+    $stmt = $connection->prepare("update  user_profile_data set count_publish = count_publish+1 where id_user =?");
+    $stmt->bind_param("i", $id_user);
+    $stmt->execute();
+    //mysqli_query($connection, "update  user_profile_data set count_publish = count_publish+1 where id_user =('$id_user')");
     header("Location: edit_story_page.php?id_story='$id_story'&id_user='$id_user'");
 }
 

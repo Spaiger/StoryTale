@@ -1,6 +1,11 @@
 <?php
 session_start();
 include '../../db.php';
+if (isset($_GET["id_user"])) {
+    if (intval($_GET["id_user"]) != $_GET["id_user"]) {
+        header("location: ../../logout.php");
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

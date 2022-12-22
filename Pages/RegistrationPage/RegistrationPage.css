@@ -1,17 +1,18 @@
 .content{
-    display: flex;
-    flex-direction: column;
+    
     position: absolute;
     background-color: #FFEFCB;
     backdrop-filter: blur(10px);
-    margin-right: 10.9375%;
-    margin-left: 10.9375%;
-    margin-top: 5.75221238938053%;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-top: 5vh;
     align-items: center;
-    height: 88.49557522123893%;
-    width: 78.125%;
+    height: 88vh;
+    width: 80vw;
     border-radius: 10px 10px 0px 0px;
     flex: 1 0 auto;
+    top: 0;
+    justify-content: center;
 }
 
 body{
@@ -22,18 +23,19 @@ body{
     padding: 0;
 }
 
-.footer{
-    position:absolute;
-    width:78.125%;
-    margin-right: 10.9375%;
-    margin-left: 10.9375%;
-    margin-top: 50%;
-    height: 9.734513274336283%;
-    background-color: #7D5846;
-    flex: 0 0 auto;
-    border-radius: 1vh 1vh 0px 0px;
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
 }
-
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .con{
     display: flex;
     flex-direction: column;

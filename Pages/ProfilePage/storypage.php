@@ -1,7 +1,12 @@
 <?php
 session_start();
-if (!isset($_GET["id_story"])) {
+if (!isset($_GET["id_story"]) ) {
+    
     header("location: ../../index.php");
+}else{
+    if( intval( $_GET["id_story"])!= $_GET["id_story"]){
+        header("location: ../../logout.php");
+    }
 }
 ?>
 <!DOCTYPE html>

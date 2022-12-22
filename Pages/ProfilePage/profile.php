@@ -1,8 +1,23 @@
 <?php
 session_start();
 include '../../db.php';
-$id = $_GET["id_user"];
 
+
+var_dump($_GET);
+var_dump($_SESSION);
+$equel = false;
+if(isset($_SESSION["user"]) && isset($_GET["id_user"]) ){
+    $equel = $_GET["id_user"] == $_SESSION["user"];
+    if( intval( $_GET["id_user"])!= $_GET["id_user"]){
+        header("location: ../../logout.php");
+    }
+}
+if(isset($_GET["id_user"])){
+    if( intval( $_GET["id_user"])!= $_GET["id_user"]){
+        header("location: ../../logout.php");
+    }
+}
+$id = intval( $_GET["id_user"]);
 $dataName = mysqli_query($connection, "select nickname from user_data where id_user = '$id'");
 $name = $dataName->fetch_array()["nickname"];
 
@@ -37,9 +52,12 @@ $followers = $dataProfile["followers"];
             <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
               <?php echo '<div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id . '\'";>Все работы</div>';?>
-                <div class="NewStory"  onclick="location.href='../StoryCreatePages/story_create_main_page.php';">
+              <?php 
+              if($equel) echo'
+              <div class="NewStory"  onclick="location.href=\'../StoryCreatePages/story_create_main_page.php\';">
                  +
-            </div>
+                </div>'
+                ?>
             </div>
             <div class="profile">
                 <div class="desc">

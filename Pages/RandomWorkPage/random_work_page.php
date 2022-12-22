@@ -26,8 +26,16 @@
             <?php
             //$id = $_GET["id_user"];
             include "../../db.php";
-            $res = mysqli_query($connection, "select * from main_story_data order by rand() limit 4;");
+            $stmt = $connection->prepare("select * from main_story_data order by rand() limit 4;");
+            //$res = mysqli_query($connection, "select * from main_story_data order by rand() limit 4;");
             $ans = [];
+            $stmt->execute();
+            $res = $stmt->get_result();
+            
+            
+           
+           // var_dump($stmt);
+            //var_dump($res);
             while ($row = $res->fetch_assoc()) {
 
                 $ans[] = $row;
