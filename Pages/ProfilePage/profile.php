@@ -13,11 +13,12 @@ if(isset($_SESSION["user"]) && isset($_GET["id_user"]) ){
     }
 }
 if(isset($_GET["id_user"])){
+    $id = $_GET["id_user"];
     if( intval( $_GET["id_user"])!= $_GET["id_user"]){
         header("location: ../../logout.php");
     }
 }
-$id = $_GET["id_user"];
+
 $dataName = mysqli_query($connection, "select nickname from user_data where id_user = '$id'");
 $name = $dataName->fetch_array()["nickname"];
 
@@ -51,7 +52,22 @@ $followers = $dataProfile["followers"];
                 <div class="button" id="but2" onclick="location.href='../AuthorsPage/authors_page.php';">Авторы</div>
                 <div class="button" id="but3" onclick="location.href='../PopularPage/popular_page.php';">Популярное</div>
                 <div class="button" id="but4" onclick="location.href='../RandomWorkPage/random_work_page.php';">Случайная работа</div>
-                <div class="button" id="but5" onclick="location.href=\'logout.php\';">Выйти</div>
+               <?php
+               if (isset($_SESSION["user"]) && isset($_GET["id_user"])) {
+                   $id_sess = $_SESSION["user"];
+                   if($id_sess==$id){
+                       echo '<div class="button" id="but5" onclick="location.href=\'../../logout.php\';">Выйти</div>';
+                   }else{
+                    echo '<div class="button" id="but5" onclick="location.href=\'profile.php?id_user='.$id_sess.'\';">Профиль</div>';
+                   }
+               }
+               else{
+                echo '<div class="button" id="but5" onclick="location.href=\'../AuthorizationPage/authorization_page.php\';">Войти</div>';
+               }
+               
+               ?> 
+               
+                
             </div>
             <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
