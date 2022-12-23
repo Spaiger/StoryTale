@@ -27,7 +27,7 @@ $req = mysqli_query($connection, "select avatar,count_publish, followers from us
 
 $dataProfile = $req->fetch_assoc();
 
-$avatar = $dataProfile["avatar"];
+$avatar = $dataProfile["avatar"]==null? "":$dataProfile["avatar"];
 $count_publish = $dataProfile["count_publish"];
 $followers = $dataProfile["followers"];
 
