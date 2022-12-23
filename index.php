@@ -19,7 +19,7 @@ if (isset($_SESSION['user'])) {
     <link rel="stylesheet" href="Pages/footer.css">
     <?php
     if (isset($_SESSION['user'])) {
-        echo '<link rel="stylesheet" href="styles/austyle.css">';
+        echo '<link rel="stylesheet" href="AuMainPage.css">';
     }
     ?>
 
@@ -40,13 +40,12 @@ if (isset($_SESSION['user'])) {
                     echo '<div class="button" id="but5" onclick="location.href=\'Pages/AuthorizationPage/authorization_page.php\';">Вход</div>';
                 } else {
                     $id = $_SESSION['user'];
-                    echo  '<div class="button" id="but5" onclick="location.href=\'Pages/ProfilePage/profile.php?id_user='.$id.'\';">Профиль</div>
-                    <div class="button" id="but6" onclick="location.href=\'logout.php\';">Выйти</div>';
+                    echo  '<div class="button" id="but5" onclick="location.href=\'Pages/ProfilePage/profile.php?id_user='.$id.'\';">Профиль</div>';
                 }
 
                 ?>
             </div>
-            <div class="input"><input type="text" class="search"></div>
+            <!-- <div class="input"><input type="text" class="search"></div> -->
             <?php  
              
             if (!isset($_SESSION['user'])) {
@@ -54,7 +53,6 @@ if (isset($_SESSION['user'])) {
             } else {
 
                 echo '<div class="pipi">
-                <div class="NewStory">+</div>
                 <div class="title">Новое</div>
                 </div>';
             }
@@ -66,9 +64,13 @@ if (isset($_SESSION['user'])) {
                 <div class="stories" id="block4">s</div>
             </div>
         </div>
-        <?php 
-        include "Pages/footer.php";
-        ?>
+        <div class="footer">
+            <div class="news">
+                <p><a class="link" href="Pages/Others/Rules.php">Правила</a></p>
+                <p><a class="link" href="index.php">Новости сайта</a></p>
+            </div>
+            <div class="social">s</div>
+        </div>
     </div>
 </body>
 

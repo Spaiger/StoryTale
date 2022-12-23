@@ -16,7 +16,7 @@ if (isset($_SESSION['user'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Создать историю</title>
-    <link rel="stylesheet" href="authorization_page.css">
+    <link rel="stylesheet" href="storycreate.css">
     <link rel="stylesheet" href="../footer.css">
 </head>
 
@@ -46,7 +46,7 @@ if (isset($_SESSION['user'])) {
                         </div>
                     </div>
                     <div class="in">
-                        <div class="ni2">Описание<input style=" background-color:#ffffff; height: 8vh" type="text" name="description" class="input" id="description" required></div>
+                        <div class="ni2">Описание<input style=" background-color:#EFE8E2;" type="text" name="description" class="input" id="description" required></div>
                     </div>
                 </form>
                 <div class="commentWrap">
