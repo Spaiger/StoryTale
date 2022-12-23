@@ -100,6 +100,23 @@ body{
     /* align-self: center; */
 }
  
+
+
+.title{
+    font-size: 2vw;
+    margin-top: 2.6vh;
+    margin-bottom: 5.2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blocks{
+    overflow-x: auto;
+    width: 100vw;
+    height: 520px;
+    scroll-snap-type: y mandatory;
+}
 .stories{
     width: 70vw;
     height: 17.5vh;
@@ -114,23 +131,6 @@ body{
     scroll-snap-align: center;
     margin-top: 1vh;
 }
-
-.title{
-    font-size: 2vw;
-    margin-top: 2.6vh;
-    margin-bottom: 5.2vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.blocks{
-    overflow-x: auto;
-    width: 100vw;
-    height: 100vh;
-    scroll-snap-type: y mandatory;
-}
-
 .stories:hover{
     background-color: #BA8C76;
 }
@@ -179,5 +179,43 @@ body{
 
 .pipi{
     margin-top: 1.5vh;
-    margin-bottom: 2.6vh;
+    /*margin-bottom: 2.6vh;*/
+}
+.storyContent {
+    display: flex;
+    flex-direction: row;
+    height: 90%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.number {
+    
+    background-color: #fff;
+    left: 0;
+    width: 50px;
+}
+.imageContainer {
+    /*background-color: #fff;*/
+}
+.image{
+    border-radius: 50%;
+}
+.name {
+    background-color: #fff;
+}
+.description {
+    background-color: #fff;
+}
+.likeContent {
+    display: flex;
+    margin-right: 10vw;
+    align-items: center;
+
+}
+.like {
+    border: black;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
 }
