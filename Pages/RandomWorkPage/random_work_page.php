@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();include "../../db.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +30,7 @@
             </div>
             <?php
             //$id = $_GET["id_user"];
-            include "../../db.php";
+            
             $stmt = $connection->prepare("select * from main_story_data order by rand() limit 4;");
             //$res = mysqli_query($connection, "select * from main_story_data order by rand() limit 4;");
             $ans = [];

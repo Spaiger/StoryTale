@@ -27,18 +27,19 @@ if (!isset($_GET["id_story"]) ) {
     <div class="con">
         <div class="content">
             <?php include '../appbar.php'; ?>
-            <div class="contentWrap">
+           
                 <div class="blocks">
                     <div class="stories" id="block1">123 &#9829</div>
                     <div class="name">
                         <p id="username">Название</p>
                         <p id="workscount">Анннотация:</p>
                     </div>
-                </div>
-                <div class="description">
+                    <div class="description">
                     fdfdjkfdjhjfd
                 </div>
-            </div>
+                </div>
+                
+            
         </div>
         <?php include '../footer.php'; ?>
     </div>
