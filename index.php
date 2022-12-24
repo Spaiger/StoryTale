@@ -65,10 +65,22 @@ $id  = $res->fetch_array()["id_story"];
             ?>
             
             <div class="blocks">
-                <div class="stories" id="block1">s</div>
-                <div class="stories" id="block2">s</div>
-                <div class="stories" id="block3">s</div>
-                <div class="stories" id="block4">s</div>
+                <div class="stories" id="block1"> <!--И сделать собственно что у админа в профиле во вкладвке все работы, просто 4 работы, которые соотвествуют новостям этим-->
+                    <div class="tit">Здесь кароче заголовок новости(буквально 1-2 слова)</div>
+                    <div class="tex">А здесь текст(тоже немного)</div>
+                </div>
+                <div class="stories" id="block2">
+                    <div class="tit">Здесь кароче заголовок новости(буквально 1-2 слова)</div>
+                    <div class="tex">А здесь текст(тоже немного)</div>
+                </div>
+                <div class="stories" id="block3">
+                    <div class="tit">Здесь кароче заголовок новости(буквально 1-2 слова)</div>
+                    <div class="tex">А здесь текст(тоже немного)</div>
+                </div>
+                <div class="stories" id="block4">
+                    <div class="tit">Здесь кароче заголовок новости(буквально 1-2 слова)</div>
+                    <div class="tex">А здесь текст(тоже немного)</div>
+                </div>
             </div>
           <!--  <div class="blocks">
                 <div class="stories" id="block1">s</div>

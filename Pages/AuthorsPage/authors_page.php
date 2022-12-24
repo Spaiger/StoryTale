@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <script src="MainPage.js"></script>
+    <script src="MainPage.js"></script> 
     <div class="con">
         <div class="content">
             <?php include '../appbar.php'; ?>

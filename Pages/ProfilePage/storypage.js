@@ -15,3 +15,11 @@ function back(){
     document.getElementById("edit1").style.display = "block";
     document.getElementById("mda").style.flexDirection = "row";
 }
+
+function delet(){
+    document.getElementById("back").style.display = "flex";
+}
+
+function retur(){
+    document.getElementById("back").style.display = "none";
+}

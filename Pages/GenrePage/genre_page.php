@@ -33,25 +33,25 @@ session_start();
             <div class="blocks">
                 <div class="stories" id="block1"  onclick="location.href='current_genre.php?genre=detective'">
                     <div class="containerGenre">
-                        <img src="../../image/genre/detective.png" alt="детективы">
+                        <div class="avatar"><img src="../../image/genre/detective.png" alt="детективы"></div>
                         <div class="name">Детективы</div>
                     </div>
                 </div>
                 <div class="stories" id="block2" onclick="location.href='current_genre.php?genre=dramaturg'">
                     <div class="containerGenre">
-                        <img src="../../image/genre/dramaturg.png" alt="драматургия">
+                        <div class="avatar"><img src="../../image/genre/dramaturg.png" alt="драматургия"></div>
                         <div class="name">Драматургия</div>
                     </div>
                 </div>
                 <div class="stories" id="block3" onclick="location.href='current_genre.php?genre=fantasy'">
                     <div class="containerGenre">
-                        <img src="../../image/genre/fantasy.png" alt="фентези">
+                        <div class="avatar"><img src="../../image/genre/fantasy.png" alt="фентези"></div>
                         <div class="name">Фентези</div>
                     </div>
                 </div>
                 <div class="stories" id="block4" onclick="location.href='current_genre.php?genre=science_fiction'">
                     <div class="containerGenre">
-                        <img src="../../image/genre/science_fiction.png" alt="научная фантастика">
+                        <div class="avatar"><img src="../../image/genre/science_fiction.png" alt="научная фантастика"></div>
                         <div class="name">Научная <br> фантастика</div>
                     </div>
                 </div>

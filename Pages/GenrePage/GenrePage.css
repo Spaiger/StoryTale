@@ -194,4 +194,15 @@ body{
 }
 .name {
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 3vh; */
+    height: 25vh;
 }

@@ -20,30 +20,8 @@ include '../../db.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genres</title>
-    <link rel="stylesheet" href="storypage.css">
-    <link rel="stylesheet" href="../footer.css">
-    <?php
-    if (isset($_SESSION['user'])) {
-        echo '<link rel="stylesheet" href="../../styles/austyle.css">';
-    }
-    ?>
-</head>
-
-<body>
-    <script src="storypage.js"></script>
-
-    <div class="con">
-        <div class="content">
-            <?php
-            include '../appbar.php';
-            
-            $res = mysqli_query($connection, "SELECT * from main_story_data where id_story ='$id_story'");
+<?php
+$res = mysqli_query($connection, "SELECT * from main_story_data where id_story ='$id_story'");
             $res = $res->fetch_assoc();
             $name = $res["name"];
             $annotation = $res["description"];
@@ -63,8 +41,39 @@ include '../../db.php';
            
 
 
+    ?>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $name?></title>
+    <link rel="stylesheet" href="storypage.css">
+    <link rel="stylesheet" href="../footer.css">
+    <?php
+    if (isset($_SESSION['user'])) {
+        echo '<link rel="stylesheet" href="../../styles/austyle.css">';
+    }
+    ?>
+</head>
+
+<body>
+    <script src="storypage.js"></script>
+    <div id="back">
+        <div id="confirm">
+            <!-- <div id="knopka">&#128938;</div> -->
+            <div id="question">Вы уверенны что хотите удалить эту историю?</div>
+            <div id="yorn">
+                <div id="Yes">Да</div>
+                <div id="No" onclick="retur()">Нет</div>
+            </div>
+        </div>
+    </div>
+    <div class="con">
+        <div class="content">
+            <?php
+            include '../appbar.php';
             ?>
-    
+            <div class="NewStory" onclick="delet()">&#128465;</div>
             <div class="blocks" id="mda">
                 <div id="title">
                     <div id = "edit2" onclick="back()">Назад</div>
@@ -73,9 +82,9 @@ include '../../db.php';
                 </div>
                 <div id="story"><?php echo $description ?></div>
                 <div class="pre" id = "left">
-                    <div class="stories" id="block1">123 &#9829</div>
+                    <div class="stories" id="block1"></div> 
                     <div class="butt">
-                        <div class="ava"><img src="../../image/user/default.png" id="image"></div>
+                        <div class="ava" onclick=""><img src="../../image/user/default.png" id="image"><p class="nick">GG</p></div>
                         <?php if($flag){ ?>
                             <div id = "edit" onclick="location.href='../StoryCreatePages/edit_story_page.php<?php echo '?id_story='.$id_story.'&id_user='.$id_user ?>';">Редактировать</div>
                         <?php }?>
