@@ -1,7 +1,8 @@
 <?php session_start();
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,34 +16,45 @@
     }
     ?>
 </head>
+
 <body>
     <script src="MainPage.js"></script>
     <div class="con">
         <div class="content">
-           <?php include '../appbar.php'; ?>
+            <?php include '../appbar.php'; ?>
             <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
                 <!-- <div class="NewStory">+</div> -->
                 <div class="title">Авторы</div>
             </div>
             <?php
-                include '../../db.php';
-                $usersData = mysqli_query($connection, "select distinct nickname,id_user from user_data  order by rand() limit 8;");
-                for ($i=0; $i <2 ; $i++) { 
-                    echo '<div class="blocks">';
-                    for ($j=1; $j <=4 ; $j++) {
-                        $userNick = $usersData->fetch_row();
+            include '../../db.php';
+            $usersData = mysqli_query($connection, "SELECT distinct nickname,user_data.id_user,upd.avatar from user_data JOIN user_profile_data upd on user_data.id_user = upd.id_user order by rand() limit 8 ;");
+            for ($i = 0; $i < 2; $i++) {
+                echo '<div class="blocks">';
+                for ($j = 1; $j <= 4; $j++) {
+                    $userDataRow = $usersData->fetch_row();
 
-                        echo '<div class="stories" onclick="location.href=\'../ProfilePage/profile.php?id_user='.$userNick[1].'\'" name="id_user" id="block'.$j.'">'.$userNick[0].'</div>';
-                    }
-                    
-                    echo '</div>';
+                   // echo '<div class="stories" onclick="location.href=\'../ProfilePage/profile.php?id_user=' . $userDataRow[1] . '\'" name="id_user" id="block' . $j . '">' . $userDataRow[0] . '</div>';
+                    echo '
+                    <div class="stories" onclick="location.href=\'../ProfilePage/profile.php?id_user='.$userDataRow[1].'\'" name="id_user" id="block'.$j.'">
+                        <div class="user">
+                            <div class="avatar"><img src="../../image/user/'. $userDataRow[2].'" alt="" width="50" ></div>
+                            <div class="nickname">'.$userDataRow[0].'</div>
+                        </div>
+                    </div>
+                    ';
                 }
+
+                echo '</div>';
+            }
             ?>
+            
         </div>
-        <?php 
+        <?php
         include "../footer.php";
         ?>
     </div>
 </body>
+
 </html>
