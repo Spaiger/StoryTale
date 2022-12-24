@@ -22,6 +22,7 @@ if(isset($_GET["genre"])){
     <title><?php echo $value?></title>
     <link rel="stylesheet" href="CurrentGenre.css">
     <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../menustyle.css">
     <?php
     if (isset($_SESSION['user'])) {
         echo '<link rel="stylesheet" href="../../styles/austyle.css">';
@@ -41,7 +42,8 @@ if(isset($_GET["genre"])){
             </div>
         </div>
     </div>
-    <div class="con">
+    <?php include '../menu.php'; ?>
+    <div class="con" id = "conn">
         <div class="content">
             <?php include '../appbar.php' ?>
             <!-- <div class="input"><input type="text" class="search"></div> -->

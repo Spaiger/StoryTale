@@ -1,0 +1,103 @@
+#cl{
+    display: none;
+}
+
+#mu{
+    display: none;
+}
+
+.three{
+    align-items: center;
+    justify-content: center;
+    display: none;
+    /* margin-left: 8vw; */
+    /* margin-bottom: 11vh; */
+    color: #FFEFCB;
+    background-color: #DDBFA1;
+    width: 7vw;
+    font-size: 6vmin;
+    z-index: 990;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 900px){
+    .three{
+        display: flex;
+    }
+
+    .appbar{
+        display: none;
+        overflow-x: hidden;
+    }
+
+    #cl{
+        display: flex;
+        font-size: 6vmin;
+        font-family: one;
+        text-align: center;
+        color: #FFEFCB;
+        background-color: #DDBFA1;
+        width: 7vw;
+        height: 4.5vh;
+        margin-left: 93vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #gl{
+        text-align: center;
+        margin: 0;
+    }
+
+    #mu{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 91vh;
+    }
+
+    .content{
+        border-radius: 1vw 1vw 1vw 1vw;
+    }
+
+    .title{
+        margin-bottom: 0;
+        margin-top: 0;
+        font-size: 5vw;
+    }
+
+    #butmenu{
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background-color: #FFEFCB;
+        z-index: 9990;
+    }
+
+    .appbar1{
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+    }
+
+    .button{
+        margin-left: 5vw;
+        font-size: 5vw;
+    }
+
+    #but1,#but3,#but5{
+        margin-left: 4vw;
+        margin-right: 0;
+    }
+
+    .news1{
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
