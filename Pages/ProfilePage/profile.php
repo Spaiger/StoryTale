@@ -60,7 +60,7 @@ $id_story  = $res->fetch_array()["id_story"];
                 <div class="button" id="but1" onclick="location.href='../GenrePage/genre_page.php';">Жанры</div>
                 <div class="button" id="but2" onclick="location.href='../AuthorsPage/authors_page.php';">Авторы</div>
                 <div class="button" id="but3" onclick="location.href='../PopularPage/popular_page.php';">Популярное</div>
-                <div class="button" id="but4" onclick="location.href='../ProfilePage/storypage.php<?php echo '?id_story='.$id.'&type=rand' ?>';">Случайная работа</div>
+                <div class="button" id="but4" onclick="location.href='../ProfilePage/storypage.php<?php echo '?id_story='.$id_story.'&type=rand' ?>';">Случайная работа</div>
                 <?php
                 if (isset($_SESSION["user"]) && isset($_GET["id_user"])) {
                     $id_sess = $_SESSION["user"];
