@@ -205,27 +205,34 @@ body{
     flex-direction: row;
     height: 90%;
     width: 100%;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
 }
 .number {
-    
-    background-color: #fff;
+    margin-left: 5vw;
+    /* background-color: #fff; */
     left: 0;
-    width: 50px;
+    width: 5vw;
 }
 .imageContainer {
     /*background-color: #fff;*/
+    margin-left: 2.5vw;
+    width: 5vw;
 }
 .image{
    /* border-radius: 50%;*/
 }
 .name {
-    background-color: #fff;
+    /* background-color: #fff; */
+    margin-left: 2.5vw;
+    width: 10vw;
 }
 .description {
-    background-color: #fff;
+    /* background-color: #fff; */
+    margin-left: 5vw;
+    width: 40vw;
 }
+
 .blocks{
     overflow-x: auto;
     width: 100vw;

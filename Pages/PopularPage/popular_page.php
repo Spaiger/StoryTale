@@ -49,7 +49,7 @@ session_start();
                 <div class="stories" id="block'.$i.'" onclick="location.href=\'storypage.php?id_story='.$ans[$i - 1]["id_story"].'\'">
                     <div class="storyContent" >
                         <div class="number">'.$i.'</div>
-                        <div class="imageContainer"><img class="image" src="../../image/story/'.$ans[$i-1]["avatar"].'" width="50" height="50"></div>
+                        <div class="imageContainer"><img class="image" src="../../image/story/default.png" width="50" height="50"></div>
                         <div class="name">'.$ans[$i-1]["name"].'</div>
                         <div class="description">'.$ans[$i-1]["description"].'</div>
                     </div>
@@ -60,7 +60,7 @@ session_start();
                 }
 
                   echo '</div>';
-
+                  /*'.$ans[$i-1]["avatar"].'*/
             }
             ?>
             <!-- <div class="blocks">
