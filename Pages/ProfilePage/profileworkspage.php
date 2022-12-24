@@ -53,7 +53,7 @@ if (isset($_GET["id_user"])) {
 
                 $ans[] = $row;
             }
-
+            
             // var_dump($ans[0]["id_story"]);
 
             //var_dump($res);
@@ -61,20 +61,32 @@ if (isset($_GET["id_user"])) {
             if ($res) {
                 echo '<div class="blocks">';
                 for ($i = 1; $i <= count($ans); $i++) {
-                    echo ' <div class="stories" id="block' . $i . '" onclick="location.href=\'../StoryCreatePages/edit_story_page.php?id_story=' . $ans[$i - 1]["id_story"] . '&id_user=' . $id . ';\'">' . $ans[$i - 1]["name"] . '</div>';
+                   // echo ' <div class="stories" id="block' . $i . '" onclick="location.href=\'../StoryCreatePages/edit_story_page.php?id_story=' . $ans[$i - 1]["id_story"] . '&id_user=' . $id . ';\'">' . $ans[$i - 1]["name"] . '</div>';
+                    
+                echo '
+                
+                <div class="stories" id="block'.$i.'" onclick="location.href=\'storypage.php?id_story='.$ans[$i - 1]["id_story"].'\'">
+                    <div class="storyContent" >
+                        <div class="number">'.$i.'</div>
+                        <div class="imageContainer"><img class="image" src="../../image/story/'.$ans[$i-1]["avatar"].'" width="50" height="50"></div>
+                        <div class="name">'.$ans[$i-1]["name"].'</div>
+                        <div class="description">'.$ans[$i-1]["description"].'</div>
+                    </div>
+               
+                </div>
+                
+                ';
                 }
 
-
-
-                //  echo '</div>';
+                  echo '</div>';
 
             }
             ?>
-
-            <div class="stories" id="block1">
-                <div class="storyContent" onclick="location.href='storypage.php?id_story=1&id_user=1'">
+    <!--
+            <div class="stories" id="block1" onclick="location.href='storypage.php?id_story=1&id_user=1'">
+                <div class="storyContent" >
                     <div class="number">1</div>
-                    <div class="imageContainer"><img class="image" src="../../testassets/maxresdefault.jpg" width="50" height="50"></div>
+                    <div class="imageContainer"><img class="image" src="../../image/story/default.png" width="50" height="50"></div>
                     <div class="name">1234567890 1234567890 1234567890</div>
                     <div class="description">Это притча о самом лучшем котикеЭтЭто притча о самом лучшем котикео притча о самом лучшем котике</div>
                 </div>
@@ -88,7 +100,7 @@ if (isset($_GET["id_user"])) {
                 exmple
             </div>
         </div>
-
+        -->
         <!-- <div class="blocks">
                 <div class="stories" id="block1">s</div>
                 <div class="stories" id="block2">s</div>
