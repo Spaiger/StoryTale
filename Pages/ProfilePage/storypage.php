@@ -59,7 +59,7 @@ include '../../db.php';
                 
             }
 
-            mysqli_query($connection, "UPDATE  part_story_data set visit = visit+1 where id_story = '$id_story'");
+            mysqli_query($connection, "UPDATE  main_story_data set visit = visit+1 where id_story = '$id_story'");
            
 
 

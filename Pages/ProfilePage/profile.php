@@ -9,27 +9,29 @@ $equel = false;
 if (isset($_SESSION["user"]) && isset($_GET["id_user"])) {
     $equel = $_GET["id_user"] == $_SESSION["user"];
     if (intval($_GET["id_user"]) != $_GET["id_user"]) {
-        header("location: ../../logout.php");
+        //echo 'sessia';
+                header("location: ../../logout.php");
     }
 }
 if (isset($_GET["id_user"])) {
     $id = $_GET["id_user"];
     if (intval($_GET["id_user"]) != $_GET["id_user"]) {
-        header("location: ../../logout.php");
+        //echo 'user';
+              header("location: ../../logout.php");
     }
 }
 
 $dataName = mysqli_query($connection, "select nickname from user_data where id_user = '$id'");
 $name = $dataName->fetch_array()["nickname"];
 
-$req = mysqli_query($connection, "select avatar,count_publish, followers from user_profile_data where id_user = '$id'");
+$req = mysqli_query($connection, "select avatar,count_publish from user_data where id_user = '$id'");
 
 
 $dataProfile = $req->fetch_assoc();
 
 $avatar = $dataProfile["avatar"] == null ? "" : $dataProfile["avatar"];
 $count_publish = $dataProfile["count_publish"];
-$followers = $dataProfile["followers"];
+$followers = 0;
 
 
 

@@ -69,8 +69,10 @@ $avatar = $res["avatar"];
                         <div class="ni2">
                             <p class="kostil">Жанр</p>
                             <select name="genre" class="input" id="genre">
-                                <option value="loh" <?php if ($genre == "loh") echo 'selected' ?>>Loh</option>
-                                <option value="neloh" <?php if ($genre == "neloh") echo 'selected' ?>>NeLoh</option>
+                                <option value="fantasy" <?php if ($genre == "fantasy") echo 'selected' ?>>Фентези</option>
+                                <option value="science_fiction" <?php if ($genre == "science_fiction") echo 'selected' ?>>Научная фантастика</option>
+                                <option value="dramaturg" <?php if ($genre == "dramaturg") echo 'selected' ?>>Драматургия</option>
+                                <option value="detective" <?php if ($genre == "detective") echo 'selected' ?>>Детективы</option>
                             </select>
                         </div>
                     </div>

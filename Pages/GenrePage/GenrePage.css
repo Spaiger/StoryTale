@@ -188,3 +188,10 @@ body{
     margin-top: 1.5vh;
     margin-bottom: 2.6vh;
 }
+.containerGenre {
+    justify-content: center;
+    align-items: center;
+}
+.name {
+    text-align: center;
+}

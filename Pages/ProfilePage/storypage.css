@@ -18,7 +18,7 @@ body{
     margin-left: 10vw;
     margin-top: 5vh;
     align-items: center;
-    min-height: 100%;
+    min-height: 90vh;
     width: 80vw;
     border-radius: 0.6vw 0.6vw 0px 0px;
     flex: 1 0 auto;

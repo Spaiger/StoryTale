@@ -59,12 +59,23 @@ $id  = $res->fetch_array()["id_story"];
                 </div>';
             }
             ?>
+            
+            <?php
+            $res;
+            ?>
+            
             <div class="blocks">
                 <div class="stories" id="block1">s</div>
                 <div class="stories" id="block2">s</div>
                 <div class="stories" id="block3">s</div>
                 <div class="stories" id="block4">s</div>
             </div>
+          <!--  <div class="blocks">
+                <div class="stories" id="block1">s</div>
+                <div class="stories" id="block2">s</div>
+                <div class="stories" id="block3">s</div>
+                <div class="stories" id="block4">s</div>
+            </div>-->
         </div>
         <div class="footer">
             <div class="news">

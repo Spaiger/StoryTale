@@ -1,0 +1,244 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #BA8C76;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #FFEFCB;
+    backdrop-filter: blur(10px);
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-top: 5vh;
+    align-items: center;
+    height: 90vh;
+    width: 80vw;
+    border-radius: 0.6vw 0.6vw 0px 0px;
+    flex: 1 0 auto;
+}
+
+.con{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.button{
+    font-size: 1.5vw;
+    height: auto;
+    width: auto;
+    white-space: nowrap;
+    background-color: #DDBFA1;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    margin-top: 4.2vh;
+    margin-bottom: 4.2vh;
+    border-radius: 0.3vw;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
+}
+
+.button:hover{
+    background-color: #BA8C76;
+}
+
+.button:active{
+    transition: 0.1s;
+    background-color: #7D5846;
+}
+
+/* #but2, #but4{ Для авторизованного аккаунта */
+    /* margin-left: 8.3%; */
+    /* margin-right: 8.3%; */
+/* } */
+
+/* #but1{ Для авторизованного аккаунта */
+    /* margin-left: 6.3%; */
+/* } */
+
+#but2, #but4{ /*Для не авторизованного аккаунта*/
+    margin-left: 4.5vw;
+    margin-right: 4.5vw;
+}
+
+#but1{ /*Для не авторизованного аккаунта*/
+    margin-left: 15vw;
+}
+
+#but5{
+    margin-right: 5vw;
+}
+
+.appbar{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* margin-left: 17.2375%; */
+}
+
+.search{
+    width: 100%;
+    box-sizing: content-box;
+    border: none;
+    background-color:#EFE8E2;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    /* align-self: center; */
+}
+ 
+
+.title{
+    font-size: 2vw;
+    margin-top: 2.6vh;
+    margin-bottom: 5.2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blocks{
+    overflow-x: auto;
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+}
+
+.stories:hover{
+    background-color: #BA8C76;
+}
+
+.stories:active{
+    transition: 0.1s;
+    background-color: #7D5846;
+}
+
+#block1{
+    margin-left: 15vw;
+    /* margin-right: 15vw; */
+    scroll-snap-align: start;
+}
+
+#block2{
+    margin-top: 1vh;
+    margin-left: 15vw;
+    /* margin-right: 15vw; */
+    scroll-snap-align: center;
+}
+
+#block3{
+    margin-top: 1vh;
+    margin-left: 15vw;
+    /* margin-right: 15vw; */
+    scroll-snap-align: center;
+}
+
+#block4{
+    margin-top: 1vh;
+    margin-left: 15vw;
+    /* margin-right: 15vw; */
+    scroll-snap-align: end;
+}
+
+.input{
+    width: 87.4%;
+}
+
+.NewStory{
+    padding-top: 0.15vw;
+    padding-bottom: 0.15vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    height: auto;
+    width: auto;
+    font-size: 3vh;
+    color: #FFEFCB;
+    background-color: #DDBFA1;
+    border-radius: 0.3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15;
+    margin-left: 68vw;
+}
+
+.NewStory:hover{
+    background-color: #BA8C76;
+}
+
+.NewStory:active{
+    transition: 0.1s;
+    background-color: #7D5846;
+}
+
+.pipi{
+    margin-top: 1.5vh;
+   /* margin-bottom: 2.6vh;*/
+}
+
+.storyContent {
+    display: flex;
+    flex-direction: row;
+    height: 90%;
+    width: 100%;
+    /* justify-content: space-around; */
+    align-items: center;
+}
+.number {
+    margin-left: 5vw;
+    /* background-color: #fff; */
+    left: 0;
+    width: 5vw;
+}
+.imageContainer {
+    /*background-color: #fff;*/
+    margin-left: 2.5vw;
+    width: 5vw;
+}
+.image{
+   /* border-radius: 50%;*/
+}
+.name {
+    /* background-color: #fff; */
+    margin-left: 2.5vw;
+    width: 10vw;
+}
+.description {
+    /* background-color: #fff; */
+    margin-left: 5vw;
+    width: 40vw;
+}
+
+.blocks{
+    overflow-x: auto;
+    width: 100vw;
+    height: 54.8vh;
+    scroll-snap-type: y mandatory;
+}
+.stories{
+    width: 70vw;
+    height: 17.5vh;
+    background-color: #DDBFA1;
+    border-radius: 0.3vw;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    margin-left: 15vw;
+    scroll-snap-align: center;
+    margin-top: 1vh;
+}

@@ -30,9 +30,10 @@ if (isset($_SESSION['user'])) {
             <div class="form">
                 <form action="createMain.php" method="post" id="usrform" class="usrform">
                     <input type="hidden" name="id_user" value="<?php echo $id ?>">
-                    <div class="in">
+                    <!--<div class="in">
                         <div class="ni2">Обложка<input type="file" class="input" id="image" name="img"></div>
                     </div>
+-->
                     <div class="in">
                         <div class="ni2">Назание<input type="text" name="name" class="input" id="name" required></div>
                     </div>
@@ -40,8 +41,10 @@ if (isset($_SESSION['user'])) {
                         <div class="ni2">
                             Жанр
                             <select name="genre" class="input" id="genre">
-                                <option value="loh">Loh</option>
-                                <option value="neloh">NeLoh</option>
+                                <option value="fantasy">Фентези</option>
+                                <option value="science_fiction">Научная фантастика</option>
+                                <option value="dramaturg">Драматургия</option>
+                                <option value="detective">Детективы</option>
                             </select>
                         </div>
                     </div>

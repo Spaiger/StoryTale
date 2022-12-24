@@ -42,7 +42,7 @@ if (isset($_GET["id_user"])) {
             <?php include '../appbar.php'; ?>
             <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
-                <div class="NewStory">+</div>
+                <!--<div class="NewStory">+</div>-->
                 <div class="title">Все работы</div>
             </div>
             <?php

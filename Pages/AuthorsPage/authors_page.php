@@ -29,7 +29,7 @@
             </div>
             <?php
             include '../../db.php';
-            $usersData = mysqli_query($connection, "SELECT distinct nickname,user_data.id_user,upd.avatar from user_data JOIN user_profile_data upd on user_data.id_user = upd.id_user order by rand() limit 8 ;");
+            $usersData = mysqli_query($connection, "SELECT distinct nickname,id_user,avatar from user_data order by rand() limit 8 ;");
             for ($i = 0; $i < 2; $i++) {
                 echo '<div class="blocks">';
                 for ($j = 1; $j <= 4; $j++) {

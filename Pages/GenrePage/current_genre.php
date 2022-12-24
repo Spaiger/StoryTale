@@ -1,14 +1,26 @@
 <?php
 session_start();
+
+if(isset($_GET["genre"])){
+    $get_genre = $_GET["genre"];
+    
+    if($get_genre == "detective"){$value = "Детективы";}
+    if($get_genre == "science_fiction"){$value = "Научная фантастика";}
+    if($get_genre == "fantasy"){$value = "Фентези";}
+    if($get_genre == "dramaturg"){$value = "Драматургия";}
+}else{
+    header("location: genre_page.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Популярное</title>
-    <link rel="stylesheet" href="PopularPage.css">
+    <title>Жанры</title>
+    <link rel="stylesheet" href="CurrentGenre.css">
     <link rel="stylesheet" href="../footer.css">
     <?php
     if (isset($_SESSION['user'])) {
@@ -16,19 +28,21 @@ session_start();
     }
     ?>
 </head>
+
 <body>
     <script src="MainPage.js"></script>
     <div class="con">
         <div class="content">
-        <?php include '../appbar.php'; ?>
+            <?php include '../appbar.php' ?>
             <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
                 <!-- <div class="NewStory">+</div> -->
-                <div class="title">Популярное</div>
+                <div class="title"><?php echo $value ?></div>
             </div>
-            <?php
-            //$id = $_GET["id_user"];
-            $res = mysqli_query($connection, "SELECT * from main_story_data  order by visit desc limit 5;");
+            <?php include '../../db.php';
+            
+
+            $res = mysqli_query($connection, "SELECT * from main_story_data where genre = '$get_genre'");
             $ans = [];
             while ($row = $res->fetch_assoc()) {
 
@@ -70,9 +84,10 @@ session_start();
                 <div class="stories" id="block4">s</div>
             </div> -->
         </div>
-        <?php 
+        <?php
         include "../footer.php";
         ?>
     </div>
 </body>
+
 </html>

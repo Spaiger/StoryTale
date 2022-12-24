@@ -3,6 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +17,7 @@ session_start();
     }
     ?>
 </head>
+
 <body>
     <script src="MainPage.js"></script>
     <div class="con">
@@ -26,11 +28,33 @@ session_start();
                 <!-- <div class="NewStory">+</div> -->
                 <div class="title">Жанры</div>
             </div>
+            <?php include '../../db.php'; ?>
+            
             <div class="blocks">
-                <div class="stories" id="block1">1</div>
-                <div class="stories" id="block2">2</div>
-                <div class="stories" id="block3">3</div>
-                <div class="stories" id="block4">4</div>
+                <div class="stories" id="block1"  onclick="location.href='current_genre.php?genre=detective'">
+                    <div class="containerGenre">
+                        <img src="../../image/genre/detective.png" alt="детективы">
+                        <div class="name">Детективы</div>
+                    </div>
+                </div>
+                <div class="stories" id="block2" onclick="location.href='current_genre.php?genre=dramaturg'">
+                    <div class="containerGenre">
+                        <img src="../../image/genre/dramaturg.png" alt="драматургия">
+                        <div class="name">Драматургия</div>
+                    </div>
+                </div>
+                <div class="stories" id="block3" onclick="location.href='current_genre.php?genre=fantasy'">
+                    <div class="containerGenre">
+                        <img src="../../image/genre/fantasy.png" alt="фентези">
+                        <div class="name">Фентези</div>
+                    </div>
+                </div>
+                <div class="stories" id="block4" onclick="location.href='current_genre.php?genre=science_fiction'">
+                    <div class="containerGenre">
+                        <img src="../../image/genre/science_fiction.png" alt="научная фантастика">
+                        <div class="name">Научная <br> фантастика</div>
+                    </div>
+                </div>
             </div>
             <!-- <div class="blocks">
                 <div class="stories" id="block1">s</div>
@@ -39,9 +63,10 @@ session_start();
                 <div class="stories" id="block4">s</div>
             </div> -->
         </div>
-        <?php 
+        <?php
         include "../footer.php";
         ?>
     </div>
 </body>
+
 </html>
