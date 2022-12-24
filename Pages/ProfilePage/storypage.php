@@ -17,6 +17,15 @@ if(isset($_SESSION["user"])){
 
 $id_story = $_GET["id_story"];
 include '../../db.php';
+
+
+$res = mysqli_query($connection, "SELECT * from main_story_data where id_story ='$id_story'");
+$res = $res->fetch_assoc();
+$name = $res["name"];
+$annotation = $res["description"];
+$description = $res["comment"];
+$avatar = $res["avatar"];
+$id_user = $res["id_user"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +34,7 @@ include '../../db.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genres</title>
+    <title><?php echo $name ?></title>
     <link rel="stylesheet" href="storypage.css">
     <link rel="stylesheet" href="../footer.css">
     <?php
@@ -43,13 +52,7 @@ include '../../db.php';
             <?php
             include '../appbar.php';
             
-            $res = mysqli_query($connection, "SELECT * from main_story_data where id_story ='$id_story'");
-            $res = $res->fetch_assoc();
-            $name = $res["name"];
-            $annotation = $res["description"];
-            $description = $res["comment"];
-            $avatar = $res["avatar"];
-            $id_user = $res["id_user"];
+           
 
             $flag = false;
            // var_dump($id_user);

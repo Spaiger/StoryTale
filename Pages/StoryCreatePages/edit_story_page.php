@@ -85,7 +85,7 @@ $avatar = $res["avatar"];
                 </div>
             </div>
 
-            <input class="button" id="au" form="usrform" type="submit" value="Редактировать историю" style="border: none;">
+            <input class="button" id="au" form="usrform" type="submit" value="Сохранить изменения " style="border: none;">
         </div>
         <?php 
         include "../footer.php";

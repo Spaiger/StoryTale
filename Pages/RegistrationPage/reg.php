@@ -59,7 +59,10 @@ if (count($errorArray) == 0) {
 
 
   $find = mysqli_query($connection, "select * from user_data where email = '$userEmail'");
+  
   $user = $find->fetch_assoc();
+  $find = mysqli_query($connection, "select * from user_data where nickname = '$userNickname'");
+  $nick = $user = $find->fetch_assoc();
   if (!($_POST["password"] == $_POST["password_confirm"])) {
     $_SESSION['msg'] = "Пароли не совпадают";
     $connection->close();
@@ -68,7 +71,12 @@ if (count($errorArray) == 0) {
     $_SESSION['msg'] = "Эта почта уже используется";
     $connection->close();
     header("Location: registration_page.php");
-  } else {
+  }else if(isset($nick["nickname"])) {
+    $_SESSION['msg'] = "Это имя пользователя уже занято";
+    $connection->close();
+    header("Location: registration_page.php");
+  }
+  else {
 
    
 
