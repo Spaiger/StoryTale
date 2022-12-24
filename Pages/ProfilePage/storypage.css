@@ -5,6 +5,7 @@ body{
     margin: 0;
     padding: 0;
     position: absolute;
+    overflow-x: hidden;
 }
 
 .content{
@@ -21,6 +22,7 @@ body{
     width: 80vw;
     border-radius: 0.6vw 0.6vw 0px 0px;
     flex: 1 0 auto;
+    overflow-x: hidden;
     /* padding-bottom: 30vw; */
 }
 
@@ -28,6 +30,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    overflow-x: hidden;
 }
 
 .button{
@@ -136,6 +139,7 @@ body{
     width: 70vw;
     margin-left: 15vw;
     margin-right: 20vw;
+    overflow-wrap: break-word;
     /* margin-bottom: 30vh; */
     /* padding-bottom: 20vh; */
 }
@@ -202,7 +206,7 @@ body{
     margin-bottom: 2.6vh;
 }
 
-#edit, #edit1{
+#edit{
     font-size: 1vw;
     height: auto;
     width: 6vw;
@@ -233,6 +237,30 @@ body{
 #edit:active{
     transition: 0.1s;
     background-color: #7D5846;
+}
+
+#edit1{
+    font-size: 1.5vw;
+    height: auto;
+    width: 4.5vw;
+    white-space: nowrap;
+    background-color: #DDBFA1;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    margin-top: 4.2vh;
+    margin-bottom: 4.2vh;
+    border-radius: 0.3vw;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    /* transition: 0.5s; */
+    /* margin-left: 15vw; */
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #edit1:hover{

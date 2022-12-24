@@ -27,10 +27,10 @@ session_start();
                 <div class="title">Жанры</div>
             </div>
             <div class="blocks">
-                <div class="stories" id="block1">Jopa1</div>
-                <div class="stories" id="block2">Jopa2</div>
-                <div class="stories" id="block3">Jopa3</div>
-                <div class="stories" id="block4">jopa4</div>
+                <div class="stories" id="block1">1</div>
+                <div class="stories" id="block2">2</div>
+                <div class="stories" id="block3">3</div>
+                <div class="stories" id="block4">4</div>
             </div>
             <!-- <div class="blocks">
                 <div class="stories" id="block1">s</div>
