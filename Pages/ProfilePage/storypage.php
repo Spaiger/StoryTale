@@ -8,8 +8,15 @@ if (!isset($_GET["id_story"])) {
         header("location: ../../logout.php");
     }
 }
+
+if(isset($_SESSION["user"])){
+    $id_session = $_SESSION["user"];
+}else{
+    $id_session = null;
+}
+
 $id_story = $_GET["id_story"];
-//var_dump($id_story);
+include '../../db.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,13 +37,22 @@ $id_story = $_GET["id_story"];
         <div class="content">
             <?php
             include '../appbar.php';
-            include '../../db.php';
+            
             $res = mysqli_query($connection, "select * from main_story_data where id_story ='$id_story'");
             $res = $res->fetch_assoc();
             $name = $res["name"];
             $annotation = $res["description"];
             $description = $res["comment"];
             $avatar = $res["avatar"];
+            $id_user = $res["id_user"];
+
+            $flag = false;
+           // var_dump($id_user);
+            //var_dump($id_session);
+            if($id_user==$id_session){
+                $flag = true;
+                
+            }
             ?>
     
             <div class="blocks">
@@ -49,6 +65,9 @@ $id_story = $_GET["id_story"];
                 <div class="description">
                     <?php echo $description ?>
                 </div>
+            <?php if($flag){ ?>
+                <div class="button" onclick="location.href='../StoryCreatePages/edit_story_page.php<?php echo '?id_story='.$id_story.'&id_user='.$id_user ?>';">Редактировать</div>
+            <?php }?>
             </div>
 
 
