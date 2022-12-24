@@ -38,7 +38,7 @@ include '../../db.php';
             <?php
             include '../appbar.php';
             
-            $res = mysqli_query($connection, "select * from main_story_data where id_story ='$id_story'");
+            $res = mysqli_query($connection, "SELECT * from main_story_data where id_story ='$id_story'");
             $res = $res->fetch_assoc();
             $name = $res["name"];
             $annotation = $res["description"];
@@ -53,6 +53,11 @@ include '../../db.php';
                 $flag = true;
                 
             }
+
+            mysqli_query($connection, "UPDATE  part_story_data set visit = visit+1 where id_story = '$id_story'");
+           
+
+
             ?>
     
             <div class="blocks">
