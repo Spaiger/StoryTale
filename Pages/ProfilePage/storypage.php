@@ -88,9 +88,7 @@ include '../../db.php';
                     </div>
                     <div id = "edit1" onclick="read()">Читать</div>
                 </div>
-            <?php if($flag){ ?>
-                <div class="button" onclick="location.href='../StoryCreatePages/edit_story_page.php<?php echo '?id_story='.$id_story.'&id_user='.$id_user ?>';">Редактировать</div>
-            <?php }?>
+            
             </div>
         </div>
         <?php include '../footer.php'; ?>
