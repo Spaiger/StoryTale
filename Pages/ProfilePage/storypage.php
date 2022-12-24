@@ -28,10 +28,15 @@ include '../../db.php';
     <title>Genres</title>
     <link rel="stylesheet" href="storypage.css">
     <link rel="stylesheet" href="../footer.css">
+    <?php
+    if (isset($_SESSION['user'])) {
+        echo '<link rel="stylesheet" href="../../styles/austyle.css">';
+    }
+    ?>
 </head>
 
 <body>
-    <script src="MainPage.js"></script>
+    <script src="storypage.js"></script>
 
     <div class="con">
         <div class="content">
@@ -60,22 +65,33 @@ include '../../db.php';
 
             ?>
     
-            <div class="blocks">
-                <div class="stories" id="block1">123 &#9829</div>
-                <div class="name">
-                <p id="username"><?php echo $name ?></p>  
-                    
-                    <p id="workscount">Анннотация:<?php echo $annotation ?></p>
+            <div class="blocks" id="mda">
+                <div id="title">
+                    <div id = "edit2" onclick="back()">Назад</div>
+                    <div id = "Name"><?php echo $name ?></div>
+                    <div></div>
                 </div>
-                <div class="description">
-                    <?php echo $description ?>
+                <div id="story"><?php echo $description ?></div>
+                <div class="pre" id = "left">
+                    <div class="stories" id="block1">123 &#9829</div>
+                    <div class="butt">
+                        <div class="ava"><img src="../../image/user/default.png" id="image"></div>
+                        <?php if($flag){ ?>
+                            <div id = "edit" onclick="location.href='../StoryCreatePages/edit_story_page.php<?php echo '?id_story='.$id_story.'&id_user='.$id_user ?>';">Редактировать</div>
+                        <?php }?>
+                    </div>
+                </div>
+                <div class="about" id="right">
+                    <div class="name">
+                        <p id="username"><?php echo $name ?></p>  
+                        <p id="ann">Анннотация: <?php echo $annotation ?></p>
+                    </div>
+                    <div id = "edit1" onclick="read()">Читать</div>
                 </div>
             <?php if($flag){ ?>
                 <div class="button" onclick="location.href='../StoryCreatePages/edit_story_page.php<?php echo '?id_story='.$id_story.'&id_user='.$id_user ?>';">Редактировать</div>
             <?php }?>
             </div>
-
-
         </div>
         <?php include '../footer.php'; ?>
     </div>

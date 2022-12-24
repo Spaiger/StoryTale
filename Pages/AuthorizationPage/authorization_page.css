@@ -76,6 +76,7 @@ body{
 .in{
     height: 8.75vh;
     width: 80vw;
+    /* margin-left: 5vw; */
 }
 
 #au{
