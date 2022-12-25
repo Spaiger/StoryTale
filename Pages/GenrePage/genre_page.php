@@ -11,6 +11,7 @@ session_start();
     <title>Жанры</title>
     <link rel="stylesheet" href="GenrePage.css">
     <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../menustyle.css">
     <?php
     if (isset($_SESSION['user'])) {
         echo '<link rel="stylesheet" href="../../styles/austyle.css">';
@@ -19,8 +20,9 @@ session_start();
 </head>
 
 <body>
-    <script src="MainPage.js"></script>
-    <div class="con">
+    <script src="genre_page.js"></script>
+    <?php include '../menu.php'; ?>
+    <div class="con" id = "conn">
         <div class="content">
             <?php include '../appbar.php' ?>
             <!-- <div class="input"><input type="text" class="search"></div> -->
@@ -33,25 +35,25 @@ session_start();
             <div class="blocks">
                 <div class="stories" id="block1"  onclick="location.href='current_genre.php?genre=detective'">
                     <div class="containerGenre">
-                        <img src="../../image/genre/detective.png" alt="детективы">
+                        <div class="avatar"><img src="../../image/genre/detective.png" alt="детективы" class="image"></div>
                         <div class="name">Детективы</div>
                     </div>
                 </div>
                 <div class="stories" id="block2" onclick="location.href='current_genre.php?genre=dramaturg'">
                     <div class="containerGenre">
-                        <img src="../../image/genre/dramaturg.png" alt="драматургия">
+                        <div class="avatar"><img src="../../image/genre/dramaturg.png" alt="драматургия" class="image"></div>
                         <div class="name">Драматургия</div>
                     </div>
                 </div>
                 <div class="stories" id="block3" onclick="location.href='current_genre.php?genre=fantasy'">
                     <div class="containerGenre">
-                        <img src="../../image/genre/fantasy.png" alt="фентези">
+                        <div class="avatar"><img src="../../image/genre/fantasy.png" alt="фентези" class="image"></div>
                         <div class="name">Фентези</div>
                     </div>
                 </div>
                 <div class="stories" id="block4" onclick="location.href='current_genre.php?genre=science_fiction'">
                     <div class="containerGenre">
-                        <img src="../../image/genre/science_fiction.png" alt="научная фантастика">
+                        <div class="avatar"><img src="../../image/genre/science_fiction.png" alt="научная фантастика" class="image"></div>
                         <div class="name">Научная <br> фантастика</div>
                     </div>
                 </div>

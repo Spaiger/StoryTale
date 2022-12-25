@@ -24,11 +24,13 @@
                     <div class="ni2">
                         <input type="text" name="nickname" class="input" id="text" placeholder="Имя" required>
                     </div>
+                    <div class="alertmsg">Неправильная почта или пароль</div>
                 </div>
                 <div class="in">
                     <div class="ni2">
                         <input type="email" name="email" class="input" id="email" placeholder="Почта" required>
                     </div>
+                    <div class="alertmsg">Неправильная почта или пароль</div>
                 </div>
                 <div class="in">
                     <div class="ni2">
@@ -39,11 +41,13 @@
                     <div class="ni2">
                         <input type="password" name="password_confirm" class="input" id="repassword" placeholder="Повторите пароль" required>
                     </div>
+                    <div class="alertmsg">Неправильная почта или пароль</div>
                 </div>
                 <div class="in">
                     <div class="ni2">
                         <input type="date" name="birthday" class="input" id="bir" placeholder="Дата рождения" required>
                     </div>
+                    <div class="alertmsg">Неправильная почта или пароль</div>
                 </div>
                 <div class="in">
                     <div class="ni2" id = "check">

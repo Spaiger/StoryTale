@@ -56,10 +56,10 @@ $avatar = $res["avatar"];
                         <div class="ni2">
                         <?php //echo $avatar; 
                             ?>
-                            <img style="border-radius: 50%;" src="../../testassets/maxresdefault.jpg" width="50" height="50" alt="">
+                            <!-- <img style="border-radius: 50%;" src="../../testassets/maxresdefault.jpg" width="50" height="50" alt="">
                        
                             Обложка
-                            <input type="file" class="input" id="image" name="img">
+                            <input type="file" class="input" id="image" name="img"> -->
                         </div>
                     </div>
                     <div class="in">

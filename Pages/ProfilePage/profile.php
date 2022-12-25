@@ -90,10 +90,10 @@ $id_story  = $res->fetch_array()["id_story"];
             <div class="profile">
                 <div class="desc">
                     <div id="avatar"><img src=""></div>
-                    <div id="followers">
+                    <!-- <div id="followers">
                         <p>Подписчики:</p>
                         <p><?php echo $followers ?> &#9829;</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="name">
                     <p id="username"><?php echo $name ?></p>

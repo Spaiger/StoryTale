@@ -194,4 +194,55 @@ body{
 }
 .name {
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 3vh; */
+    height: 25vh;
+}
+
+@media screen and (max-width:900px) {
+    .blocks{
+        flex-direction: column;
+    }
+
+    .stories{
+        margin-left: 15vw;
+        width: 70vw;
+        margin-top: 8vh;
+        height: 10vh;
+    }
+
+    .containerGenre{
+        display: flex;
+        /* flex-direction: row; */
+        /* justify-content: space-between; */
+        /* align-items: center; */
+        height: 1vh;
+    }
+    .avatar{
+        height: 10vh;
+        margin-left: 0;
+        margin-right: 5vw;
+        width: 35vw;
+    }
+
+    .image{
+        width: 14vw;
+        height: 14vw;
+        overflow: hidden;
+    }
+    .name{
+        height: 10vh;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        width: 35vw;
+    }
 }

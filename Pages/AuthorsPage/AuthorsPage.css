@@ -188,4 +188,9 @@ body{
     margin-top: 1.5vh;
     margin-bottom: 2.6vh;
 }
-    
+
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

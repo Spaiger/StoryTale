@@ -10,6 +10,7 @@
     <title>Авторы</title>
     <link rel="stylesheet" href="AuthorsPage.css">
     <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../menustyle.css">
     <?php
     if (isset($_SESSION['user'])) {
         echo '<link rel="stylesheet" href="../../styles/austyle.css">';
@@ -18,8 +19,9 @@
 </head>
 
 <body>
-    <script src="MainPage.js"></script>
-    <div class="con">
+    <script src="author_page.js"></script> 
+    <?php include '../menu.php'; ?>
+    <div class="con" id = "conn">
         <div class="content">
             <?php include '../appbar.php'; ?>
             <!-- <div class="input"><input type="text" class="search"></div> -->

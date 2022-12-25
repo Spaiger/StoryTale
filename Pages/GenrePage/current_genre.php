@@ -22,6 +22,7 @@ if(isset($_GET["genre"])){
     <title><?php echo $value ?></title>
     <link rel="stylesheet" href="CurrentGenre.css">
     <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../menustyle.css">
     <?php
     if (isset($_SESSION['user'])) {
         echo '<link rel="stylesheet" href="../../styles/austyle.css">';
@@ -30,8 +31,19 @@ if(isset($_GET["genre"])){
 </head>
 
 <body>
-    <script src="MainPage.js"></script>
-    <div class="con">
+    <script src="current_genre_page.js"></script>
+    <div id="back">
+        <div id="confirm">
+            <!-- <div id="knopka">&#128938;</div> -->
+            <div id="question">Вы уверенны что хотите удалить эту историю?</div>
+            <div id="yorn">
+                <div id="Yes">Да</div>
+                <div id="No" onclick="retur()">Нет</div>
+            </div>
+        </div>
+    </div>
+    <?php include '../menu.php'; ?>
+    <div class="con" id = "conn">
         <div class="content">
             <?php include '../appbar.php' ?>
             <!-- <div class="input"><input type="text" class="search"></div> -->
@@ -60,14 +72,19 @@ if(isset($_GET["genre"])){
                     
                 echo '
                 
-                <div class="stories" id="block'.$i.'" onclick="location.href=\'../ProfilePage/storypage.php?id_story='.$ans[$i - 1]["id_story"].'\'">
-                    <div class="storyContent" >
-                        <div class="number">'.$i.'</div>
-                        <div class="imageContainer"><img class="image" src="../../image/story/default.png" width="50" height="50"></div>
-                        <div class="name">'.$ans[$i-1]["name"].'</div>
-                        <div class="description">'.$ans[$i-1]["description"].'</div>
+                <div class="ad">
+                    <div class="stories" id="block'.$i.'" onclick="location.href=\'../ProfilePage/storypage.php?id_story='.$ans[$i - 1]["id_story"].'\'">
+                        <div class="storyContent" >
+                            <div class="number">'.$i.'</div>
+                            <div class="imageContainer"><img class="image" src="../../image/story/default.png" width="50" height="50"></div>
+                            <div class="name">'.$ans[$i-1]["name"].'</div>
+                            <div class="description">'.$ans[$i-1]["description"].'</div>
+                        </div>
                     </div>
-               
+                    <div class="admin">
+                        <div class="NewStory" onclick="delet()">&#128465;</div>
+                        <div class="NewStory">&#9998;</div>
+                    </div>
                 </div>
                 
                 ';

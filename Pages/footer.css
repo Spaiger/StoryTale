@@ -1,3 +1,6 @@
+/* * {
+    border: 1px solid #f00; } */
+
 .footer{
     position:fixed;
     width:80vw;
@@ -15,6 +18,7 @@
 .news{
     width: 37vw;
     height: 10vh;
+    /* margin-bottom: 10vh; */
 }
 
 .social{
@@ -30,6 +34,18 @@
 .link{
     font-size: 1.5vw;
     margin-left: 2vw;
+    /* margin-bottom: 2vh; */
     color: #EFE8E2;
     text-decoration: none;
+}
+
+@media screen and (max-width:900px) {
+    .footer{
+        display: none;
+    }
+
+    .link{
+        font-size: 5vw;
+        color: #7D5846;
+    }
 }
