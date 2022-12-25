@@ -15,20 +15,17 @@ if (isset($_SESSION['user'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Создать историю</title>
-    <link rel="stylesheet" href="storycreate.css">
+    <title>Новость</title>
+    <link rel="stylesheet" href="admin.css">
     <link rel="stylesheet" href="../footer.css">
     <link rel="stylesheet" href="../menustyle.css">
 </head>
 
 <body>
-    <script src="allpage.js"></script>
+    <script src="admin.js"></script>
     <?php include '../menu.php'; ?>
     <div class="con" id = "conn">
         <div class="content">
-            <div class="title">
-                <div class="text">Создать</div>
-            </div>
             <div class="form">
                 <form action="createMain.php" method="post" id="usrform" class="usrform">
                     <input type="hidden" name="id_user" value="<?php echo $id ?>">
@@ -42,23 +39,6 @@ if (isset($_SESSION['user'])) {
                             <input type="text" name="name" class="input" id="name" required>
                         </div>
                     </div>
-                    <div class="in">
-                        <div class="ni2">
-                            <div id="de1">Жанр</div>
-                            <select name="genre" class="input" id="genre">
-                                <option value="fantasy">Фентези</option>
-                                <option value="science_fiction">Научная фантастика</option>
-                                <option value="dramaturg">Драматургия</option>
-                                <option value="detective">Детективы</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="in">
-                        <div class="ni2">
-                            <div id="de2">Описание</div>
-                            <input style=" background-color:#EFE8E2;" type="text" name="description" class="input" id="description" required>
-                        </div>
-                    </div>
                 </form>
                 <div class="commentWrap">
                     <div class="ni2">
@@ -67,7 +47,7 @@ if (isset($_SESSION['user'])) {
                     </div>
                 </div>
             </div>
-            <input class="button" id="au" form="usrform" type="submit" value="Создать историю" style="border: none;">
+            <input class="button" id="au" form="usrform" type="submit" value="Опубликовать" style="border: none;">
         </div>
         <?php 
         include "../footer.php";

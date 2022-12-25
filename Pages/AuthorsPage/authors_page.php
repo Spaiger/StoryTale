@@ -41,7 +41,7 @@
                     echo '
                     <div class="stories" onclick="location.href=\'../ProfilePage/profile.php?id_user='.$userDataRow[1].'\'" name="id_user" id="block'.$j.'">
                         <div class="user">
-                            <div class="avatar"><img src="../../image/user/'. $userDataRow[2].'" alt="" width="50" ></div>
+                            <div class="avatar"><img class="image" src="../../image/user/'. $userDataRow[2].'" alt="" width="50" ></div>
                             <div class="nickname">'.$userDataRow[0].'</div>
                         </div>
                     </div>

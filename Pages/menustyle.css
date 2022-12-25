@@ -59,12 +59,7 @@
 
     .content{
         border-radius: 1vw 1vw 1vw 1vw;
-    }
-
-    .title{
-        margin-bottom: 0;
-        margin-top: 0;
-        font-size: 5vw;
+        margin-bottom: 5vw;
     }
 
     #butmenu{

@@ -14,11 +14,13 @@ if (isset($_SESSION['user'])) {
     <title>Авторизация</title>
     <link rel="stylesheet" href="authorization_page.css">
     <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../menustyle.css">
 </head>
 
 <body>
-    <script src="MainPage.js"></script>
-    <div class="con">
+    <script src="au.js"></script> 
+    <!-- <?php include '../menu.php'; ?> -->
+    <div class="con" id = "conn">
         <div class="content">
             <div class="title">
                 <div class="text">Авторизация</div>
