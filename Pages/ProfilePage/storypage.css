@@ -11,18 +11,20 @@ body{
 .content{
     display: flex;
     flex-direction: column;
-    position: absolute;
+    /* position: absolute; */
     background-color: #FFEFCB;
     backdrop-filter: blur(10px);
     margin-right: 10vw;
     margin-left: 10vw;
     margin-top: 5vh;
+    margin-bottom: 5vh;
     align-items: center;
     min-height: 90vh;
     width: 80vw;
     border-radius: 0.6vw 0.6vw 0px 0px;
     flex: 1 0 auto;
     overflow-x: hidden;
+    height: 80vh;
     /* padding-bottom: 30vw; */
 }
 
@@ -121,9 +123,9 @@ body{
     margin-top: 2.6vh;
     margin-bottom: 5.2vh;
     display: none;
-    /* justify-content:space-around;
-    align-items: center; */
-    margin-left: 15vw;
+    justify-content:center;
+    align-items: center;
+    /* margin-left: 15vw; */
 }
 
 .blocks{
@@ -342,10 +344,10 @@ body{
 }
 
 #Name{
-    margin-left: 21vw;
-    display: flex;
-    justify-content: left;
-    align-items: flex-start;
+    /* margin-left: 21vw; */
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
 .ava{
@@ -452,4 +454,140 @@ body{
     margin-top: 1vw;
     margin-right: 1vw;
     font-size: 3vh;
+}
+
+.mde{
+    display: flex;
+    flex-direction: row;
+}
+
+#ns1{
+    display: none;
+}
+
+#bu{
+    display: none;
+    width: 70vw;
+    margin-left: 15vw;
+}
+
+@media screen and (max-width:900px) {
+    .mde{
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+    }
+
+    .pre{
+        width: 80vw;
+        margin-left: 15vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about{
+        width: 80vw;
+        margin-left: 10vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stories{
+        width: 50vw;
+        margin-top: 5vh;
+    }
+    
+    .butt{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 50vw;
+        margin-left: -10vw;
+    }
+
+    #edit{
+        font-size: 5vw;
+        width: auto;
+        height: auto;
+    }
+
+    .name{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #edit1{
+        font-size: 5vw;
+        width: auto;
+        height: auto;
+    }
+
+    #confirm{
+        width: 80vw;
+        height: 40vh;
+    }
+
+    #Yes{
+        width: 8vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #No{
+        width: 9vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #question{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #ns1{
+        display: flex;
+        margin-right: 60vw;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .NewStory{
+        margin-left: 0;
+        width: 5vw;
+    }
+
+    #ns{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* align-items: center; */
+    }
+
+    #bu{
+        margin-top: 2vh;
+    }
+
+    #title{
+        font-size: 5vw;
+    }
+
+    #story{
+        font-size: 3vw;
+    }
+
+    #edit2{
+        font-size: 3vw;
+        width: auto;
+        height: auto;
+    }
 }

@@ -73,8 +73,13 @@ body{
 
 .form{
     max-height: 60.5vh;
-    min-width: 10vw;
+    width: 80vw;
+    /* margin-left: 10vw; */
+    margin-right: 10vw;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* .usrform{
@@ -129,12 +134,27 @@ textarea{
     margin-bottom: 0;
 }
 
+#de{
+    margin-top: 20vh;
+}
+
+#name{
+    width: 50vw;
+}
+
+#val{
+    height: 30vh;
+    width: 50vw;
+}
+
 @media screen and (max-width:900px) {
     .form{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-left: 7.5vw;
+        margin-top: 20vh;
     }
 
     #name{

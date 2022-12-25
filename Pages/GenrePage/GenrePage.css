@@ -245,4 +245,10 @@ body{
         align-items: center;
         width: 35vw;
     }
+
+    .title{
+        margin-bottom: 0;
+        margin-top: 2vh;
+        font-size: 5vw;
+    }
 }

@@ -17,6 +17,7 @@ if (isset($_GET["id_user"])) {
     <title>Все работы</title>
     <link rel="stylesheet" href="profileworks.css">
     <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../menustyle.css">
     <script src="jquery-3.6.2.min.js" type="text/javascript">
 
     </script>
@@ -35,7 +36,7 @@ if (isset($_GET["id_user"])) {
 </head>
 
 <body>
-    <script src="MainPage.js"></script>
+    <script src="profileworks.js"></script>
     <div id="back">
         <div id="confirm">
             <!-- <div id="knopka">&#128938;</div> -->
@@ -46,7 +47,8 @@ if (isset($_GET["id_user"])) {
             </div>
         </div>
     </div>
-    <div class="con">
+    <?php include '../menu.php'; ?>
+    <div class="con" id = "conn">
         <div class="content">
             <?php include '../appbar.php'; ?>
             <!-- <div class="input"><input type="text" class="search"></div> -->

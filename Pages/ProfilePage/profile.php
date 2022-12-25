@@ -50,11 +50,20 @@ $id_story  = $res->fetch_array()["id_story"];
     <title>Профиль <?php echo $name ?></title>
     <link rel="stylesheet" href="ProfilePage.css">
     <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../menustyle.css">
+    <?php
+    if ($equel){
+        
+    }else{
+        echo '<link rel="stylesheet" href="trash.css">';
+    }
+    ?>
 </head>
 
 <body>
-    <script src="MainPage.js"></script>
-    <div class="con">
+    <script src="profile.js"></script>
+    <?php include '../menu.php'; ?>
+    <div class="con" id = "conn">
         <div class="content">
             <div class="appbar">
                 <div class="button" id="but1" onclick="location.href='../GenrePage/genre_page.php';">Жанры</div>
@@ -78,13 +87,16 @@ $id_story  = $res->fetch_array()["id_story"];
 
             </div>
             <!-- <div class="input"><input type="text" class="search"></div> -->
-            <div class="pipi">
-                <?php echo '<div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id . '\'";>Все работы</div>'; ?>
+            <div class="pipi" justify-content="center" width="80vw" margin-left="0">
+                <!-- <?php echo '<div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id . '\'";>Все работы</div>'; ?> -->
                 <?php
-                if ($equel) echo '
-              <div class="NewStory"  onclick="location.href=\'../StoryCreatePages/story_create_main_page.php\';">
+                if ($equel) {echo '
+                <div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id . '\'";>Все работы</div>
+                <div class="NewStory"  onclick="location.href=\'../StoryCreatePages/story_create_main_page.php\';">
                  +
-                </div>'
+                </div>';}else{
+                    echo '<div class="button" margin-left = "0" onclick="location.href=\'profileworkspage.php?id_user=' . $id . '\'";>Все работы</div>';
+                }
                 ?>
             </div>
             <div class="profile">

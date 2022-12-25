@@ -38,14 +38,16 @@ $avatar = $res["avatar"];
     <title>Редактировать историю</title>
     <link rel="stylesheet" href="storycreate.css">
     <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../menustyle.css">
 </head>
 
 <body>
-    <script src="MainPage.js"></script>
-    <div class="con">
+    <script src="allpage.js"></script>
+    <?php include '../menu.php'; ?>
+    <div class="con" id = "conn">
         <div class="content">
             <div class="title">
-                <div class="text">Создать</div>
+                <div class="text">Редактировать</div>
             </div>
             <div class="form">
                 <form action="edit.php" method="post" id="usrform" class="usrform">
@@ -63,11 +65,11 @@ $avatar = $res["avatar"];
                         </div>
                     </div>
                     <div class="in">
-                        <div class="ni2">Назание<input type="text" required name="name" class="input" id="name" value="<?php echo $name ?>"></div>
+                        <div class="ni2"><div id="de">Назание</div><input type="text" required name="name" class="input" id="name" value="<?php echo $name ?>"></div>
                     </div>
                     <div class="in">
                         <div class="ni2">
-                            <p class="kostil">Жанр</p>
+                            <p class="kostil"><div id="de1">Жанр</div></p>
                             <select name="genre" class="input" id="genre">
                                 <option value="fantasy" <?php if ($genre == "fantasy") echo 'selected' ?>>Фентези</option>
                                 <option value="science_fiction" <?php if ($genre == "science_fiction") echo 'selected' ?>>Научная фантастика</option>
@@ -77,11 +79,12 @@ $avatar = $res["avatar"];
                         </div>
                     </div>
                     <div class="in">
-                        <div class="ni2">Описание<input  value="<?php echo $description ?>"required style=" background-color:#ffffff; height: 8vh" type="text" name="description" class="input" id="description"></div>
+                        <div class="ni2"><div id="de2">Описание</div><input  value="<?php echo $description ?>"required style=" background-color:#ffffff; height: 8vh" type="text" name="description" class="input" id="description"></div>
                     </div>
                 </form>
                 <div class="commentWrap">
-                    <div class="ni2">Содержимое<textarea required name="comment" class="comment" form="usrform"><?php echo $comment ?></textarea></div>
+                    <div class="ni2">
+                    <div id="de3">Содержимое</div><textarea required name="comment" class="comment" id ="val"form="usrform"><?php echo $comment ?></textarea></div>
                 </div>
             </div>
 

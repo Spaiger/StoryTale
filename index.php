@@ -76,18 +76,7 @@ $id_story  = $res->fetch_array()["id_story"];
                 ?>
             </div>
             <!-- <div class="input"><input type="text" class="search"></div> -->
-            <?php  
-             
-            if (!isset($_SESSION['user'])) {
-                echo '<div class="title">Новое</div>';
-            } else {
-
-                echo '<div class="pipi">
-                <div class="title">Новое</div>
-                </div>';
-            }
-            ?>
-            
+            <div class="title">Новое</div>
             <?php
             $res;
             ?>
@@ -122,7 +111,6 @@ $id_story  = $res->fetch_array()["id_story"];
                 <p><a class="link" href="Pages/Others/Rules.php">Правила</a></p>
                 <p><a class="link" href="index.php">Новости сайта</a></p>
             </div>
-            <div class="social">s</div>
         </div>
     </div>
 </body>

@@ -216,3 +216,63 @@ body{
     max-width: 100%;
     max-height: 100%;    ;
 }
+
+@media screen and (max-width:900px) {
+    .profile{
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        margin-left: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .name{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .NewStory{
+        font-size: 6vw;
+        width: auto;
+        height: auto;
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+
+    .button{
+        font-size: 6vw;
+    }
+    
+    .pipi{
+        margin-left: 15vw;
+        width: 80vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #avatar{
+        width: 30vw;
+        /* margin-right: vw; */
+        margin-left: 0;
+    }
+
+    .desc{
+        width: 80vw;
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #username{
+        font-size: 5vw;
+    }
+
+    #workscount{
+        font-size: 5vw;
+    }
+}

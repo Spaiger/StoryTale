@@ -58,13 +58,13 @@ $res = mysqli_query($connection, "SELECT * from main_story_data where id_story =
     <title><?php echo $name ?></title>
     <link rel="stylesheet" href="storypage.css">
     <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../menustyle.css">
     <?php
     if (isset($_SESSION['user'])) {
         echo '<link rel="stylesheet" href="../../styles/austyle.css">';
     }
     ?>
 </head>
-
 <body>
     <script src="storypage.js"></script>
     <div id="back">
@@ -77,37 +77,42 @@ $res = mysqli_query($connection, "SELECT * from main_story_data where id_story =
             </div>
         </div>
     </div>
-    <div class="con">
+    <?php include '../menu.php'; ?>
+    <div class="con" id = "conn">
         <div class="content">
             <?php
             include '../appbar.php';
-            
             ?>
-            <div class="NewStory" onclick="delet()">&#128465;</div>
+            <div id="ns">
+                <div class="NewStory" id="ns1" onclick="location.href='../ProfilePage/storypage.php<?php echo '?id_story=' . $id_story . '&type=rand' ?>';">&#8635;</div>
+                <div class="NewStory" onclick="delet()">&#128465;</div>
+            </div>
             <div class="blocks" id="mda">
-                <div id="title">
+                <div id="bu">
                     <div id = "edit2" onclick="back()">Назад</div>
+                </div>
+                <div id="title">
                     <div id = "Name"><?php echo $name ?></div>
-                    <div></div>
                 </div>
                 <div id="story"><?php echo $description ?></div>
-                <div class="pre" id = "left">
-                    <div class="stories" id="block1"></div> 
-                    <div class="butt">
-                        <div class="ava" onclick=""><img src="../../image/user/default.png" id="image"><p class="nick">GG</p></div>
-                        <?php if($flag){ ?>
-                            <div id = "edit" onclick="location.href='../StoryCreatePages/edit_story_page.php<?php echo '?id_story='.$id_story.'&id_user='.$id_user ?>';">Редактировать</div>
-                        <?php }?>
+                <div class="mde">
+                    <div class="pre" id = "left">
+                        <div class="stories" id="block1"></div> 
+                        <div class="butt">
+                            <div class="ava" onclick=""><img src="../../image/user/default.png" id="image"><p class="nick">GG</p></div>
+                            <?php if($flag){ ?>
+                                <div id = "edit" onclick="location.href='../StoryCreatePages/edit_story_page.php<?php echo '?id_story='.$id_story.'&id_user='.$id_user ?>';">Редактировать</div>
+                            <?php }?>
+                        </div>
+                    </div>
+                    <div class="about" id="right">
+                        <div class="name">
+                            <p id="username"><?php echo $name ?></p>  
+                            <p id="ann">Анннотация: <?php echo $annotation ?></p>
+                        </div>
+                        <div id = "edit1" onclick="read()">Читать</div>
                     </div>
                 </div>
-                <div class="about" id="right">
-                    <div class="name">
-                        <p id="username"><?php echo $name ?></p>  
-                        <p id="ann">Анннотация: <?php echo $annotation ?></p>
-                    </div>
-                    <div id = "edit1" onclick="read()">Читать</div>
-                </div>
-            
             </div>
         </div>
         <?php include '../footer.php'; ?>

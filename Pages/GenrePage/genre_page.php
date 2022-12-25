@@ -31,7 +31,6 @@ session_start();
                 <div class="title">Жанры</div>
             </div>
             <?php include '../../db.php'; ?>
-            
             <div class="blocks">
                 <div class="stories" id="block1"  onclick="location.href='current_genre.php?genre=detective'">
                     <div class="containerGenre">

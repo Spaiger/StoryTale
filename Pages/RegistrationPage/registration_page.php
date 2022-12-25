@@ -13,16 +13,18 @@
     <title>Регистрация</title>
     <link rel="stylesheet" href="RegistrationPage.css">
     <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../menustyle.css">
 </head>
 <body>
-    <script src="MainPage.js"></script>
-    <div class="con">
+    <script src="reg.js"></script>
+    <!-- <?php include '../menu.php'; ?> -->
+    <div class="con" id = "conn">
         <div class="content">
             <div class="title"><div class="text">Регистрация</div></div>
-            <form action="reg.php" method="post">
+            <form action="reg.php" method="post" class="form">
                 <div class="in">
                     <div class="ni2">
-                        <input type="text" name="nickname" class="input" id="text" placeholder="Имя" required>
+                        <input type="text" name="nickname" class="input" id="Text" placeholder="Имя" required>
                     </div>
                     <div class="alertmsg">Неправильная почта или пароль</div>
                 </div>
@@ -51,10 +53,14 @@
                 </div>
                 <div class="in">
                     <div class="ni2" id = "check">
-                        <input type="checkbox" placeholder="Дата рождения" required>Я прочитал и согласен с <a href="../AuthorsPage/authors_page.html">правилами сайта</a>, <a href="../AuthorsPage/authors_page.html">пользовательским соглашением</a> и <a href="../AuthorsPage/authors_page.html">политикой в отношении обработки персональных данных</a>. </input>
+                        <input type="checkbox" placeholder="Дата рождения" id="check1"required>
+                        <div id="check2">
+                            Я прочитал и согласен с 
+                            <a href="../AuthorsPage/authors_page.html">правилами сайта</a>.
+                        </div>
                     </div>
                 </div>
-                <div>
+                <div id="reg">
                     <input class="button" id="au" name="submit_button"  type="submit" value="Регистрация" style="border: none;">
                 </div>
             </form>

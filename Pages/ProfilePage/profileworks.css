@@ -127,28 +127,28 @@ body{
 }
 
 #block1{
-    margin-left: 15vw;
+    /* margin-left: 15vw; */
     /* margin-right: 15vw; */
     scroll-snap-align: start;
 }
 
 #block2{
     margin-top: 1vh;
-    margin-left: 15vw;
+    /* margin-left: 15vw; */
     /* margin-right: 15vw; */
     scroll-snap-align: center;
 }
 
 #block3{
     margin-top: 1vh;
-    margin-left: 15vw;
+    /* margin-left: 15vw; */
     /* margin-right: 15vw; */
     scroll-snap-align: center;
 }
 
 #block4{
     margin-top: 1vh;
-    margin-left: 15vw;
+    /* margin-left: 15vw; */
     /* margin-right: 15vw; */
     scroll-snap-align: end;
 }
@@ -347,4 +347,89 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+@media screen and (max-width:900px) {
+    .title{
+        margin-bottom: 2vh;
+        margin-top: 2vh;
+        font-size: 5vw;
+    }
+
+    .blocks{
+        height: 100vh;
+        width: 80vw;
+    }
+
+    .stories{
+        width: 60vw;
+        height: 10vh;
+        margin-left: 6vw;
+        /* margin-right: 15vw; */
+        margin-bottom: 5vh;
+    }
+
+    .admin{
+        height: 10vh;
+        justify-content: space-between;
+        margin-left: 1vw;
+    }
+    
+    .number{
+        font-size: 4vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image{
+        width: 7vw;
+        height: 7vw;
+    }
+
+    .imageContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .name{
+        font-size: 2vw;
+        margin-left: 3vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .description{
+        font-size: 3vw;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+
+    #confirm{
+        width: 80vw;
+        height: 40vh;
+    }
+
+    #Yes{
+        width: 8vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #No{
+        width: 9vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #question{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
