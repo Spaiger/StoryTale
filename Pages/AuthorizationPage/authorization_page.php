@@ -29,21 +29,22 @@ if (isset($_SESSION['user'])) {
                 <div class="in">
                     <div class="ni2"><input type="email" name="email" class="input" id="email" placeholder="Email" required></div>
                 </div>
-                <div class="alertmsg">Неправильная почта или пароль</div>
+                <!--<div class="alertmsg">Неправильная почта или пароль</div>-->
                 <div class="in">
                     <div class="ni2"><input type="password" name="password" class="input" id="password" placeholder="Password" required></div>
                 </div>
-                <div class="alertmsg">Неправильная почта или пароль</div>
+                <div class="alertmsg"><?php 
+                if(isset($_SESSION['msg'])){
+                    echo $_SESSION['msg'];
+                    unset($_SESSION['msg']);
+                }
+            
+            ?></div>
                 <input class="button" id="au" type="submit" value="Войти" style="border: none;">
             </form>
             <div class="button" id="reg" onclick="location.href='../RegistrationPage/registration_page.php';">Регистрация</div>
         </div>
-        <?php 
-                if(isset($_SESSION['msg'])){
-                    echo $_SESSION['msg'];
-                }
-            
-            ?>
+        
         <?php 
         include "../footer.php";
         ?>

@@ -49,6 +49,7 @@ if (count($errorArray) == 0) {
   if (!ValidateUserBirthday($userBirthday)) {
     $_SESSION['msg'] = "Неправильная дата рождения";
     $errorArray[] = (array("validUserBirthday" => false));
+  } else {
   }
   if (count($errorArray) > 0) {
     echo json_encode($errorArray);
@@ -59,26 +60,27 @@ if (count($errorArray) == 0) {
 
 
   $find = mysqli_query($connection, "select * from user_data where email = '$userEmail'");
-  
+
   $user = $find->fetch_assoc();
   $find = mysqli_query($connection, "select * from user_data where nickname = '$userNickname'");
-  $nick = $user = $find->fetch_assoc();
+  $nick = $find->fetch_assoc();
   if (!($_POST["password"] == $_POST["password_confirm"])) {
     $_SESSION['msg'] = "Пароли не совпадают";
     $connection->close();
     header("Location: registration_page.php");
   } else if (isset($user['email'])) {
+    var_dump($user);
     $_SESSION['msg'] = "Эта почта уже используется";
     $connection->close();
     header("Location: registration_page.php");
-  }else if(isset($nick["nickname"])) {
+    
+  } else if (isset($nick["nickname"])) {
     $_SESSION['msg'] = "Это имя пользователя уже занято";
     $connection->close();
     header("Location: registration_page.php");
-  }
-  else {
+  } else {
 
-   
+
 
     $userPassword = password_hash($_POST["password"], PASSWORD_BCRYPT);
     //$userBirthday = ReverseBirthday($userBirthday);
@@ -87,16 +89,16 @@ if (count($errorArray) == 0) {
     $res = $connection->query($query);
 
     if ($res) {
-     
-      
+
+
       $idRes = mysqli_query($connection, "select id_user from user_data where email = '$userEmail'");
       $id = $idRes->fetch_assoc()["id_user"];
       var_dump($id);
       $_SESSION["user"] = $id;
       unset($_SESSION['msg']);
-      
-      
-     header('Location: ../../index.php');
+
+
+      header('Location: ../../index.php');
     }
   }
 }
@@ -108,10 +110,22 @@ if (count($errorArray) > 0) {
 function ValidateUserBirthday($birthday)
 {
   // birrthday = 2003-04-21
-
-
+  $today = date("Y-m-d");
   $res = explode("-", $birthday);
-  return checkdate((int)$res[1], (int)$res[2], (int)$res[0]);
+  $flag = false;
+  $flag = checkdate((int) $res[1], (int) $res[2], (int) $res[0]);
+  if ($flag) {
+    if (strtotime($birthday) > strtotime($today)) {
+      return false;
+    } else if (strtotime($birthday) < strtotime($today)) {
+      if (strtotime('-100 years', strtotime($today)) < strtotime($birthday)) {
+        return true;
+      } else
+        return false;;
+    }
+  }else{
+    return false;
+  }
 }
 function ReverseBirthday($birthday)
 {
@@ -124,11 +138,15 @@ function ValidateUserName($fn)
 {
 
   $res1 = preg_match('/^([а-яА-ЯЁё0-9a-zA-Z_]+)$/u', $fn);
-  
- 
+
+
   return $res1;
 }
 function ValidateUserEmail($email)
 {
   return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
+function valid($bd)
+{
 }

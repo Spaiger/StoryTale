@@ -101,6 +101,8 @@ body{
 #check{
     margin-left: 37.5vw;
     font-size: 0.75vw;
+    display: flex;
+    align-items: center;
 }
 
 .alertmsg{
