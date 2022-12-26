@@ -9,48 +9,46 @@ if (!isset($_GET["id_story"])) {
     }
 }
 
-if(isset($_SESSION["user"])){
+if (isset($_SESSION["user"])) {
     $id_session = $_SESSION["user"];
-}else{
+} else {
     $id_session = null;
 }
-
-$id_story = $_GET["id_story"];
+$admin = false;
+if (isset($_SESSION["admin"])) {
+    $admin = true;
+}
+$id_story_get = $_GET["id_story"];
 include '../../db.php';
 
 
-$res = mysqli_query($connection, "SELECT * from main_story_data where id_story ='$id_story'");
+$res = mysqli_query($connection, "SELECT * from main_story_data where id_story ='$id_story_get'");
 $res = $res->fetch_assoc();
 $name = $res["name"];
 $annotation = $res["description"];
 $description = $res["comment"];
 $avatar = $res["avatar"];
 $id_user = $res["id_user"];
+$res = mysqli_query($connection, "SELECT nickname from user_data where id_user ='$id_user'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$res = mysqli_query($connection, "SELECT * from main_story_data where id_story ='$id_story'");
-            $res = $res->fetch_assoc();
-            $name = $res["name"];
-            $annotation = $res["description"];
-            $description = $res["comment"];
-            $avatar = $res["avatar"];
-            $id_user = $res["id_user"];
-
-            $flag = false;
-           // var_dump($id_user);
-            //var_dump($id_session);
-            if($id_user==$id_session){
-                $flag = true;
-                
-            }
-
-            mysqli_query($connection, "UPDATE  main_story_data set visit = visit+1 where id_story = '$id_story'");
-           
 
 
-    ?>
+$flag = false;
+// var_dump($id_user);
+//var_dump($id_session);
+if ($id_user == $id_session || $admin) {
+    $flag = true;
+}
+
+mysqli_query($connection, "UPDATE  main_story_data set visit = visit+1 where id_story = '$id_story_get'");
+
+
+
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,6 +70,7 @@ $res = mysqli_query($connection, "SELECT * from main_story_data where id_story =
     }
     ?>
 </head>
+
 <body>
     <script src="storypage.js"></script>
     <!-- <div id="back">
@@ -84,40 +83,62 @@ $res = mysqli_query($connection, "SELECT * from main_story_data where id_story =
             </div>
         </div>
     </div> -->
+
+    <script src="../../jquery-3.6.2.min.js"></script>
+    <script type="text/javascript">
+        function one(id) {
+            $.ajax({
+                url: '/storytale/Pages/GenrePage/ajax.php',
+                method: 'get',
+                dataType: 'html',
+                data: {
+                    "id_story": id
+                },
+                success: function() {
+                    location.reload();
+                }
+            });
+        }
+    </script>
+
     <?php include '../menu.php'; ?>
-    <div class="con" id = "conn">
+    <div class="con" id="conn">
         <div class="content">
             <?php
             include '../appbar.php';
             ?>
             <div id="ns">
-                <div class="NewStory" id="ns1" onclick="location.href='../ProfilePage/storypage.php<?php echo '?id_story=' . $id_story . '&type=rand' ?>';">&#8635;</div>
-                <div class="NewStory" onclick="delet()">&#128465;</div>
+                <div class="NewStory" id="ns1" onclick="location.href='../ProfilePage/storypage.php<?php echo '?id_story=' . $id_story_get . '&type=rand' ?>';">&#8635;</div>
+                <?php if ($flag) { ?>
+                    <div class="NewStory" onclick="one(<?php echo $id_story_get ?>)">&#128465;</div>
+                <?php } ?>
             </div>
             <div class="blocks" id="mda">
                 <div id="bu">
-                    <div id = "edit2" onclick="back()">Назад</div>
+                    <div id="edit2" onclick="back()">Назад</div>
                 </div>
                 <div id="title">
-                    <div id = "Name"><?php echo $name ?></div>
+                    <div id="Name"><?php echo $name ?></div>
                 </div>
                 <div id="story"><?php echo $description ?></div>
                 <div class="mde">
-                    <div class="pre" id = "left">
-                        <div class="stories" id="block1"></div> 
+                    <div class="pre" id="left">
+                        <div class="stories" id="block1"></div>
                         <div class="butt">
-                            <div class="ava" onclick=""><img src="../../image/user/default.png" id="image"><p class="nick">GG</p></div>
-                            <?php if($flag){ ?>
-                                <div id = "edit" onclick="location.href='../StoryCreatePages/edit_story_page.php<?php echo '?id_story='.$id_story.'&id_user='.$id_user ?>';">Редактировать</div>
-                            <?php }?>
+                            <div class="ava" onclick=""><img src="../../image/user/default.png" id="image">
+                                <p class="nick"><?php  ?></p>
+                            </div>
+                            <?php if ($flag) { ?>
+                                <div id="edit" onclick="location.href='../StoryCreatePages/edit_story_page.php<?php echo '?id_story=' . $id_story_get . '&id_user=' . $id_user ?>';">Редактировать</div>
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="about" id="right">
                         <div class="name">
-                            <p id="username"><?php echo $name ?></p>  
+                            <p id="username"><?php echo $name ?></p>
                             <p id="ann">Анннотация: <?php echo $annotation ?></p>
                         </div>
-                        <div id = "edit1" onclick="read()">Читать</div>
+                        <div id="edit1" onclick="read()">Читать</div>
                     </div>
                 </div>
             </div>
