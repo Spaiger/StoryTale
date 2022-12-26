@@ -96,10 +96,15 @@ $id_story  = $res->fetch_array()["id_story"];
                
                 for ($i=1; $i <=4 ; $i++) { 
                     
-                    
+                if($admin) {   
                 ?>
-                    
-                <div class="stories" id="block<?php echo $i; ?>" onclick="location.href='Pages/Others/admin_page.php?id_story=<?php echo $ans[$i-1]['id_story'] ?>';"> <!--И сделать собственно что у админа в профиле во вкладвке все работы, просто 4 работы, которые соотвествуют новостям этим-->
+                  
+                <div class="stories" id="block<?php echo $i; ?>"  onclick="location.href='Pages/Others/admin_page.php?id_story=<?php echo $ans[$i-1]['id_story'] ?>';"> <!--И сделать собственно что у админа в профиле во вкладвке все работы, просто 4 работы, которые соотвествуют новостям этим-->
+                <?php 
+                }else{ ?>
+                    <div class="stories" id="block<?php echo $i; ?>"  > 
+            <?php } ?>
+
                     <div class="tit"><?php echo $ans[$i-1]["name"] ?></div>
                     <div class="tex"><?php echo $ans[$i-1]["description"] ?></div>
                 </div>

@@ -1,7 +1,7 @@
 <div class="appbar">
     <?php
         include "../../db.php";
-        $res = mysqli_query($connection, "select id_story from main_story_data order by rand() limit 1");
+        $res = mysqli_query($connection, "SELECT id_story from main_story_data WHERE status!=1 order by rand() limit 1");
         $id  = $res->fetch_array()["id_story"];
     ?>
     <div class="button" id="but1" onclick="location.href='../GenrePage/genre_page.php';">Жанры</div>

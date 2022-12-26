@@ -1,12 +1,21 @@
 <?php
 session_start();
-$id = null;
-if (isset($_SESSION['user'])) {
-    $id = $_SESSION['user'];
+
+if (isset($_SESSION['admin'])) {
+    if(isset($_GET["id_story"])){
+        $id_get = $_GET["id_story"];
+    }
 } else {
 
     header('Location: ../../index.php');
 }
+include '../../db.php';
+
+$res = mysqli_query($connection, "SELECT name,description from main_story_data where id_story = $id_get");
+$res = $res->fetch_assoc();
+//var_dump($id_get);
+$name = $res["name"];
+$description = $res["description"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +43,8 @@ if (isset($_SESSION['user'])) {
     <div class="con" id = "conn">
         <div class="content">
             <div class="form">
-                <form action="createMain.php" method="post" id="usrform" class="usrform">
-                    <input type="hidden" name="id_user" value="<?php echo $id ?>">
+                <form action="editNews.php" method="post" id="usrform" class="usrform">
+                    <input type="hidden" name="id_story" value="<?php echo $id_get ?>">
                     <!--<div class="in">
                         <div class="ni2">Обложка<input type="file" class="input" id="image" name="img"></div>
                     </div>
@@ -43,18 +52,20 @@ if (isset($_SESSION['user'])) {
                     <div class="in">
                         <div class="ni2">
                             <div id="de">Назание</div>
-                            <input type="text" name="name" class="input" id="name" required>
+                            <input type="text" name="name" class="input" id="name" required value="<?php echo $name;?>">
                         </div>
                     </div>
                 </form>
                 <div class="commentWrap">
                     <div class="ni2">
                         <div id="de3">Содержимое</div>
-                        <textarea name="comment" class="comment" form="usrform" id = "val" required></textarea>
+                        <textarea name="description" class="comment" form="usrform" id = "val" required>
+                            <?php echo $description; ?>
+                        </textarea>
                     </div>
                 </div>
             </div>
-            <input class="button" id="au" form="usrform" type="submit" value="Опубликовать" style="border: none;">
+            <input class="button" id="au" form="usrform" type="submit" value="Сохранить изменения" style="border: none;">
         </div>
         <?php 
         include "../footer.php";
