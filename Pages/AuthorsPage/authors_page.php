@@ -39,7 +39,7 @@
             <div class="kost">
             <?php
             include '../../db.php';
-            $usersData = mysqli_query($connection, "SELECT distinct nickname,id_user,avatar from user_data order by rand() limit 8 ;");
+            $usersData = mysqli_query($connection, "SELECT distinct nickname,id_user,avatar from user_data where status!=1 order by rand() limit 8;");
             for ($i = 0; $i < 4; $i++) {
                 echo '<div class="blocks" id="b'.$i.'">';
                 for ($j = 1; $j <= 2; $j++) {

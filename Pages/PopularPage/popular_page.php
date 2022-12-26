@@ -68,7 +68,7 @@ if (isset($_SESSION['admin'])) {
             </div>
             <?php
             //$id = $_GET["id_user"];
-            $res = mysqli_query($connection, "SELECT * from main_story_data  order by visit desc limit 5;");
+            $res = mysqli_query($connection, "SELECT * from main_story_data where status!=1 order by visit desc limit 5; ");
             $ans = [];
             while ($row = $res->fetch_assoc()) {
 

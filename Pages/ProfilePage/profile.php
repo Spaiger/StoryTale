@@ -21,10 +21,10 @@ if (isset($_GET["id_user"])) {
     }
 }
 
-$dataName = mysqli_query($connection, "select nickname from user_data where id_user = '$id_get'");
+$dataName = mysqli_query($connection, "SELECT nickname from user_data where id_user = '$id_get'");
 $name = $dataName->fetch_array()["nickname"];
 
-$req = mysqli_query($connection, "select avatar,count_publish from user_data where id_user = '$id_get'");
+$req = mysqli_query($connection, "SELECT avatar,count_publish from user_data where id_user = '$id_get'");
 
 
 $dataProfile = $req->fetch_assoc();
@@ -35,7 +35,7 @@ $followers = 0;
 
 
 
-$res = mysqli_query($connection, "select id_story from main_story_data order by rand() limit 1");
+$res = mysqli_query($connection, "SELECT id_story from main_story_data  where status!=1 order by rand() limit 1");
 $id_story  = $res->fetch_array()["id_story"];
 
 ?>

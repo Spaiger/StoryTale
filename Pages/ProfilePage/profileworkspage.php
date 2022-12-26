@@ -86,7 +86,7 @@ if (isset($_SESSION['admin'])) {
             </div>
             <?php
             $id = $_GET["id_user"];
-            $res = mysqli_query($connection, "select * from main_story_data where id_user = '$id';");
+            $res = mysqli_query($connection, "SELECT * from main_story_data where id_user = '$id' AND status!=1;");
             $ans = [];
             while ($row = $res->fetch_assoc()) {
 

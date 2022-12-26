@@ -19,7 +19,7 @@ $id_story = $_GET["id_story"];
 include '../../db.php';
 
 
-$res = mysqli_query($connection, "SELECT * from main_story_data where id_story ='$id_story'");
+$res = mysqli_query($connection, "SELECT * from main_story_data where id_story ='$id_story' and status!=1");
 $res = $res->fetch_assoc();
 $name = $res["name"];
 $annotation = $res["description"];
@@ -30,7 +30,7 @@ $id_user = $res["id_user"];
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$res = mysqli_query($connection, "SELECT * from main_story_data where id_story ='$id_story'");
+$res = mysqli_query($connection, "SELECT * from main_story_data where id_story ='$id_story' and status!=1");
             $res = $res->fetch_assoc();
             $name = $res["name"];
             $annotation = $res["description"];
@@ -46,7 +46,7 @@ $res = mysqli_query($connection, "SELECT * from main_story_data where id_story =
                 
             }
 
-            mysqli_query($connection, "UPDATE  main_story_data set visit = visit+1 where id_story = '$id_story'");
+            mysqli_query($connection, "UPDATE  main_story_data set visit = visit+1 where id_story = '$id_story' and status!=1");
            
 
 

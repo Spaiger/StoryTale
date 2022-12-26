@@ -5,8 +5,10 @@ if (isset($_SESSION['admin'])) {
     $admin = true;
 }
 include "db.php";
-$res = mysqli_query($connection, "select id_story from main_story_data order by rand() limit 1");
+$res = mysqli_query($connection, "SELECT id_story from main_story_data where status!=1 order by rand() limit 1 ");
 $id_story  = $res->fetch_array()["id_story"];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,17 +83,29 @@ $id_story  = $res->fetch_array()["id_story"];
                 ?>
             </div>
             <!-- <div class="input"><input type="text" class="search"></div> -->
-            <div class="title">Новое</div>
-            <?php
-            $res;
-            ?>
-            
+            <div class="title">Новости сайта</div>
+                        
             <div class="blocks">
-                <div class="stories" id="block1"> <!--И сделать собственно что у админа в профиле во вкладвке все работы, просто 4 работы, которые соотвествуют новостям этим-->
-                    <div class="tit">Здесь кароче заголовок новости(буквально 1-2 слова)</div>
-                    <div class="tex">А здесь текст(тоже немного)</div>
+                <?php 
+                $res = mysqli_query($connection, "SELECT * from main_story_data where status=1");
+                $ans = [];
+                  while ($row = $res->fetch_assoc()) {
+
+                $ans[] = $row;
+             }
+               
+                for ($i=1; $i <=4 ; $i++) { 
+                    
+                    
+                ?>
+                    
+                <div class="stories" id="block<?php echo $i; ?>" onclick="location.href='Pages/Others/admin_page.php?id_story=<?php echo $ans[$i-1]['id_story'] ?>';"> <!--И сделать собственно что у админа в профиле во вкладвке все работы, просто 4 работы, которые соотвествуют новостям этим-->
+                    <div class="tit"><?php echo $ans[$i-1]["name"] ?></div>
+                    <div class="tex"><?php echo $ans[$i-1]["description"] ?></div>
                 </div>
-                <div class="stories" id="block2">
+            <?php }?>
+            </div> 
+            <!--   <div class="stories" id="block2">
                     <div class="tit">Здесь кароче заголовок новости(буквально 1-2 слова)</div>
                     <div class="tex">А здесь текст(тоже немного)</div>
                 </div>
@@ -102,8 +116,8 @@ $id_story  = $res->fetch_array()["id_story"];
                 <div class="stories" id="block4">
                     <div class="tit">Здесь кароче заголовок новости(буквально 1-2 слова)</div>
                     <div class="tex">А здесь текст(тоже немного)</div>
-                </div>
-            </div>
+                </div>-->
+            
           <!--  <div class="blocks">
                 <div class="stories" id="block1">s</div>
                 <div class="stories" id="block2">s</div>
