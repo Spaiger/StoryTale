@@ -31,7 +31,7 @@ body{
 }
 
 .con{
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     min-height: 100vh;
     z-index: 200;
@@ -112,7 +112,8 @@ body{
 
 .stories{
     width: 60.5vw;
-    height: 35vh;
+    height: auto;
+    max-height: 30vh;
     background-color: #DDBFA1;
     border-radius: 0.3vw;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -207,16 +208,28 @@ body{
 }
 
 .tit{
-    height: 5vh;
-    margin-top: 2.5vh;
+    height: auto;
+    max-height: 5vh;
+    /* margin-top: 2.5vh; */
     margin-bottom: 2.5vh;
+    display: flex;
+    align-items:flex-end;
+    justify-content:flex-end;
+    text-align: center;
     /* width: 50vw; */
     /* margin-left: 5.25vw; */
     /* margin-right: 5.25vw; */
 }
 
 .tex{
-    height: 25vh;
+    height: auto;
+    max-height: 25vh;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow-wrap: break-word;
     /* width: 50vw; */
     /* margin-left: 5.25vw; */
     /* margin-right: 5.25vw; */
@@ -233,7 +246,7 @@ body{
 .three{
     align-items: center;
     justify-content: center;
-    display: none;
+    display: none !important;
     /* margin-left: 8vw; */
     /* margin-bottom: 11vh; */
     color: #FFEFCB;
@@ -246,6 +259,7 @@ body{
 }
 
 @media screen and (max-width: 900px){
+
     .blocks{
         flex-direction: column;
     }
