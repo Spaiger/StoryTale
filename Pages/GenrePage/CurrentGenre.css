@@ -110,12 +110,7 @@ body{
     align-items: center;
 }
 
-.blocks{
-    overflow-x: auto;
-    width: 100vw;
-    height: 100vh;
-    scroll-snap-type: y mandatory;
-}
+
 
 .stories:hover{
     background-color: #BA8C76;
@@ -225,7 +220,7 @@ body{
 .blocks{
     overflow-x: auto;
     width: 100vw;
-    height: 54.8vh;
+    height: 56vh;
     scroll-snap-type: y mandatory;
 }
 .stories{

@@ -4,16 +4,24 @@ include '../../db.php';
 if (!isset($_SESSION['user'])) {
     header("location: ../../index.php");
 } else if (isset($_SESSION['user'])) {
-    if ($_SESSION['user'] != (int)$_GET["id_user"]) {
-        echo "fdfdfdfd";
-
-        header("location: ../../index.php");
+    if(!isset($_SESSION["admin"])){
+        if ($_SESSION['user'] != (int)$_GET["id_user"] ) {
+            echo "fdfdfdfd";
+    
+            header("location: ../../index.php");
+        }
     }
+    
 }
 
-
+if(isset($_SESSION["admin"])){
+    $id_user = null;
+}
+else{
+    $id_user = $_GET["id_user"];
+}
 $id_story = $_GET["id_story"];
-$id_user = $_GET["id_user"];
+
 $res = mysqli_query($connection, "select * from main_story_data where id_story='$id_story';");
 
 $res = $res->fetch_assoc();

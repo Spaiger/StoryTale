@@ -1,10 +1,8 @@
 <?php
 session_start();
-//var_dump($_SESSION);
-if (isset($_SESSION['user'])) {
-    // header('Location: index.php');
-    //session_unset();
-   
+$admin = false;
+if (isset($_SESSION['admin'])) {
+    $admin = true;
 }
 include "db.php";
 $res = mysqli_query($connection, "select id_story from main_story_data order by rand() limit 1");
