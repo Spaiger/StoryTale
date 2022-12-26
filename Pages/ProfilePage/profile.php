@@ -97,7 +97,7 @@ $id_story  = $res->fetch_array()["id_story"];
                     </div>';
                 }
                 else{
-                    echo '<div class="button" margin-left = "0" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы 1</div>';
+                    echo '<div class="button" margin-left = "0" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы</div>';
                 }
                 ?>
             </div>
