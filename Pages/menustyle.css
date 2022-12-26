@@ -9,7 +9,7 @@
 .three{
     align-items: center;
     justify-content: center;
-    display: none;
+    display: none !important;
     /* margin-left: 8vw; */
     /* margin-bottom: 11vh; */
     color: #FFEFCB;
@@ -21,9 +21,13 @@
     overflow-x: hidden;
 }
 
+.con{
+    display: flex !important;
+}
+
 @media screen and (max-width: 900px){
     .three{
-        display: flex;
+        display: flex !important;
     }
 
     .appbar{

@@ -13,6 +13,7 @@
     border-radius: 1vh 1vh 0px 0px;
     bottom: 0;
     display: flex;
+    padding-bottom: 2vh;
 }
 
 .news{

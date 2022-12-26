@@ -23,6 +23,7 @@ $id_story  = $res->fetch_array()["id_story"];
     <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <script src="MainPage.js"></script>
     <link rel="stylesheet" href="MainPage.css">
     <link rel="stylesheet" href="Pages/footer.css">
     <link rel="stylesheet" href="Pages/menustyle.css">
@@ -31,11 +32,9 @@ $id_story  = $res->fetch_array()["id_story"];
         echo '<link rel="stylesheet" href="AuMainPage.css">';
     }
     ?>
-
 </head>
 
-<body>
-    <script src="MainPage.js"></script>
+<body onchange="chan()">
     <div id="butmenu">
         <div id="cl" onclick="clo()">&#215;</div>
         <div id="mu">
@@ -93,7 +92,7 @@ $id_story  = $res->fetch_array()["id_story"];
                 </div>
                 <div class="stories" id="block2" onclick="location.href='Pages/Others/admin_page.php';">
                     <div class="tit">Здесь кароче заголовок новости(буквально 1-2 слова)</div>
-                    <div class="tex">А здесь текст(тоже немного)</div>
+                    <div class="tex">А здесь текст(тоженемного)</div>
                 </div>
                 <div class="stories" id="block3" onclick="location.href='Pages/Others/admin_page.php';">
                     <div class="tit">Здесь кароче заголовок новости(буквально 1-2 слова)</div>
