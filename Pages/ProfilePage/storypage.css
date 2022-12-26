@@ -110,12 +110,13 @@ body{
 .stories{
     width: 15vw;
     height: 35vh;
-    background-color: #DDBFA1;
+    /* background-color: #DDBFA1; */
     border-radius: 0.3vw;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 #title{
@@ -146,14 +147,14 @@ body{
     /* padding-bottom: 20vh; */
 }
 
-.stories:hover{
+/* .stories:hover{
     background-color: #BA8C76;
 }
 
 .stories:active{
     transition: 0.1s;
     background-color: #7D5846;
-}
+} */
 
 #block1{
     /* margin-left: 15vw; */

@@ -117,7 +117,7 @@ $id_story  = $res->fetch_array()["id_story"];
             </div>
             <div class="profile">
                 <div class="desc">
-                    <div id="avatar"><img src="../../image/user/default.png"></div>
+                    <div id="avatar"><img id="im" src="../../image/user/default.png"></div>
                     <!-- <div id="followers">
                         <p>Подписчики:</p>
                         <p><?php //echo $followers ?> &#9829;</p>

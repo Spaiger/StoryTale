@@ -194,10 +194,15 @@ body{
 }
 
 #avatar{
-    width: 10vw;
+    width: 12.5vw;
     height: 25vh;
-    background-color: #DDBFA1;
+    /* background-color: #DDBFA1; */
     overflow: hidden;
+}
+
+#im{
+    width: 100%;
+    height: 100%;
 }
 
 .profile{
@@ -258,6 +263,10 @@ body{
         width: 30vw;
         /* margin-right: vw; */
         margin-left: 0;
+    }
+
+    #im{
+        height: 80%;
     }
 
     .desc{
