@@ -97,7 +97,7 @@ mysqli_query($connection, "UPDATE  main_story_data set visit = visit+1 where id_
                     "id_story": id
                 },
                 success: function() {
-                    location.reload();
+                    location.href="../../index.php";
                 }
             });
         }
