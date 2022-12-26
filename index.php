@@ -114,11 +114,11 @@ $id_story  = $res->fetch_array()["id_story"];
                     <div class="tit">Здесь кароче заголовок новости(буквально 1-2 слова)</div>
                     <div class="tex">А здесь текст(тоже немного)</div>
                 </div>
-                <div class="stories" id="block3">
+                <div class="stories" id="block3" onclick="location.href='Pages/Others/admin_page.php';">
                     <div class="tit">Здесь кароче заголовок новости(буквально 1-2 слова)</div>
                     <div class="tex">А здесь текст(тоже немного)</div>
                 </div>
-                <div class="stories" id="block4">
+                <div class="stories" id="block4" onclick="location.href='Pages/Others/admin_page.php';">
                     <div class="tit">Здесь кароче заголовок новости(буквально 1-2 слова)</div>
                     <div class="tex">А здесь текст(тоже немного)</div>
                 </div>-->
