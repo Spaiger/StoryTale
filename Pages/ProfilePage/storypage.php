@@ -125,7 +125,7 @@ mysqli_query($connection, "UPDATE  main_story_data set visit = visit+1 where id_
                 <div id="story"><?php echo $description ?></div>
                 <div class="mde">
                     <div class="pre" id="left">
-                        <div class="stories" id="block1"></div>
+                        <div class="stories" id="block1"><img src="../../image/story/default.png" alt=""></div>
                         <div class="butt">
                             <div class="ava" onclick="location.href='profile.php?id_user=<?php echo $id_user ?>';"><img src="../../image/user/default.png" id="image">
                                 <p class="nick"><?php echo $nickname ?></p>
