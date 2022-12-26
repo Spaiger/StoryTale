@@ -30,6 +30,8 @@ $description = $res["comment"];
 $avatar = $res["avatar"];
 $id_user = $res["id_user"];
 $res = mysqli_query($connection, "SELECT nickname from user_data where id_user ='$id_user'");
+$nickname = $res->fetch_assoc()["nickname"];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -125,8 +127,8 @@ mysqli_query($connection, "UPDATE  main_story_data set visit = visit+1 where id_
                     <div class="pre" id="left">
                         <div class="stories" id="block1"></div>
                         <div class="butt">
-                            <div class="ava" onclick=""><img src="../../image/user/default.png" id="image">
-                                <p class="nick"><?php  ?></p>
+                            <div class="ava" onclick="location.href='profile.php?id_user=<?php echo $id_user ?>';"><img src="../../image/user/default.png" id="image">
+                                <p class="nick"><?php echo $nickname ?></p>
                             </div>
                             <?php if ($flag) { ?>
                                 <div id="edit" onclick="location.href='../StoryCreatePages/edit_story_page.php<?php echo '?id_story=' . $id_story_get . '&id_user=' . $id_user ?>';">Редактировать</div>
