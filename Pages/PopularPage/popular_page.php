@@ -1,5 +1,9 @@
 <?php
 session_start();
+$admin = false;
+if (isset($_SESSION['admin'])) {
+    $admin = true;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +23,23 @@ session_start();
 </head>
 <body>
     <script src="popular_page.js"></script>
+    <script src="../../jquery-3.6.2.min.js"></script>
+    <script type="text/javascript">
+        function one(id) {
+            $.ajax({
+                url: '/storytale/Pages/GenrePage/ajax.php',
+                method: 'get',
+                dataType: 'html',
+                data: {
+                    "id_story": id
+                },
+                success: function() {
+                    location.reload();
+                }
+            });
+        }
+    </script>
+
     <div id="back">
         <div id="confirm">
             <!-- <div id="knopka">&#128938;</div> -->
@@ -54,28 +75,30 @@ session_start();
             if ($res) {
                 echo '<div class="blocks">';
                 for ($i = 1; $i <= count($ans); $i++) {
-                   // echo ' <div class="stories" id="block' . $i . '" onclick="location.href=\'../StoryCreatePages/edit_story_page.php?id_story=' . $ans[$i - 1]["id_story"] . '&id_user=' . $id . ';\'">' . $ans[$i - 1]["name"] . '</div>';
-                    
-                echo '
-                <div class="ad">
-                    <div class="stories" id="block'.$i.'" onclick="location.href=\'../ProfilePage/storypage.php?id_story='.$ans[$i - 1]["id_story"].'\'">
-                        <div class="storyContent" >
-                            <div class="number">'.$i.'</div>
-                            <div class="imageContainer"><img class="image" src="../../image/story/default.png" width="50" height="50"></div>
-                            <div class="name">'.$ans[$i-1]["name"].'</div>
-                            <div class="description">'.$ans[$i-1]["description"].'</div>
-                        </div>
-                    </div>
-                    <div class="admin">
-                        <div class="NewStory" onclick="delet()">&#128465;</div>
-                        <div class="NewStory">&#9998;</div>
-                    </div>
-                </div>
-                ';
-                }
+            ?>
 
-                  echo '</div>';
-                  /*'.$ans[$i-1]["avatar"].'*/
+                    <div class="ad">
+                        <div class="stories" id="block <?php echo $i; ?>" onclick="location.href='../ProfilePage/storypage.php?id_story=<?php echo $ans[$i - 1]['id_story'] ?>';">
+                            <div class="storyContent">
+                                <div class="number"><?php echo $i; ?></div>
+                                <div class="imageContainer"><img class="image" src="../../image/story/default.png" width="50" height="50"></div>
+                                <div class="name"><?php echo $ans[$i - 1]["name"]; ?> </div>
+                                <div class="description"><?php echo $ans[$i - 1]["description"]; ?> </div>
+                            </div>
+                        </div>
+                        <?php if ($admin) { ?>
+                            <div class="admin">
+                                <!--<div class="NewStory" onclick="location.href='../StoryCreatePages/delete.php?id_story=<?php //echo $ans[$i - 1]['id_story'] 
+                                                                                                                            ?>';">&#128465;</div>-->
+                                <div class="NewStory" onclick="one(<?php echo $ans[$i - 1]['id_story'] ?>)">&#128465;</div>
+                                <div class="NewStory" onclick="location.href='../StoryCreatePages/edit_story_page.php?id_story=<?php echo $ans[$i - 1]['id_story'] ?>';">&#9998;</div>
+                            </div>
+                        <?php } ?>
+                    </div>
+
+            <?php
+                }
+                echo '</div>';
             }
             ?>
             <!-- <div class="blocks">

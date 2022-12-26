@@ -14,17 +14,17 @@ if (isset($_SESSION["user"]) && isset($_GET["id_user"])) {
     }
 }
 if (isset($_GET["id_user"])) {
-    $id = $_GET["id_user"];
+    $id_get = $_GET["id_user"];
     if (intval($_GET["id_user"]) != $_GET["id_user"]) {
         //echo 'user';
               header("location: ../../logout.php");
     }
 }
 
-$dataName = mysqli_query($connection, "select nickname from user_data where id_user = '$id'");
+$dataName = mysqli_query($connection, "select nickname from user_data where id_user = '$id_get'");
 $name = $dataName->fetch_array()["nickname"];
 
-$req = mysqli_query($connection, "select avatar,count_publish from user_data where id_user = '$id'");
+$req = mysqli_query($connection, "select avatar,count_publish from user_data where id_user = '$id_get'");
 
 
 $dataProfile = $req->fetch_assoc();
@@ -73,7 +73,7 @@ $id_story  = $res->fetch_array()["id_story"];
                 <?php
                 if (isset($_SESSION["user"]) && isset($_GET["id_user"])) {
                     $id_sess = $_SESSION["user"];
-                    if ($id_sess == $id) {
+                    if ($id_sess == $id_get) {
                         echo '<div class="button" id="but5" onclick="location.href=\'../../logout.php\';">Выйти</div>';
                     } else {
                         echo '<div class="button" id="but5" onclick="location.href=\'profile.php?id_user=' . $id_sess . '\';">Профиль</div>';
@@ -88,14 +88,16 @@ $id_story  = $res->fetch_array()["id_story"];
             </div>
             <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi" justify-content="center" width="80vw" margin-left="0">
-                <!-- <?php echo '<div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id . '\'";>Все работы</div>'; ?> -->
+                <!-- <?php echo '<div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы</div>'; ?> -->
                 <?php
                 if ($equel) {echo '
-                <div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id . '\'";>Все работы</div>
-                <div class="NewStory"  onclick="location.href=\'../StoryCreatePages/story_create_main_page.php\';">
-                 +
-                </div>';}else{
-                    echo '<div class="button" margin-left = "0" onclick="location.href=\'profileworkspage.php?id_user=' . $id . '\'";>Все работы</div>';
+                    <div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы</div>
+                    <div class="NewStory"  onclick="location.href=\'../StoryCreatePages/story_create_main_page.php\';">
+                    +
+                    </div>';
+                }
+                else{
+                    echo '<div class="button" margin-left = "0" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы 1</div>';
                 }
                 ?>
             </div>
@@ -111,7 +113,7 @@ $id_story  = $res->fetch_array()["id_story"];
                     <p id="username"><?php echo $name ?></p>
                     <p id="workscount">Количество работ:
                         <?php
-                        echo '<a id="count" href="profileworkspage.php?id_user=' . $id . '">';
+                        echo '<a id="count" href="profileworkspage.php?id_user=' . $id_get . '">';
 
                         echo $count_publish ?>
                         </a>
