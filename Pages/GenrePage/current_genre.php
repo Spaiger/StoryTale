@@ -61,16 +61,16 @@ if (isset($_SESSION['admin'])) {
             });
         }
     </script>
-    <div id="back">
+    <!-- <div id="back">
         <div id="confirm">
-            <!-- <div id="knopka">&#128938;</div> -->
+            <div id="knopka">&#128938;</div>
             <div id="question">Вы уверенны что хотите удалить эту историю?</div>
             <div id="yorn">
                 <div id="Yes">Да</div>
                 <div id="No" onclick="retur()">Нет</div>
             </div>
         </div>
-    </div>
+    </div> -->
     <?php include '../menu.php'; ?>
     <div class="con" id="conn">
         <div class="content">

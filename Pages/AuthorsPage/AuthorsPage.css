@@ -101,14 +101,16 @@ body{
 }
 
 .stories{
-    width: 60.5vw;
-    height: 24vh;
+    width: 11vw;
+    height: 20vh;
     background-color: #DDBFA1;
     border-radius: 0.3vw;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 5vh;
+    /* margin-left: 5vw; */
 }
 
 .title{
@@ -122,9 +124,11 @@ body{
 
 .blocks{
     display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 100vh;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .stories:hover{
@@ -137,7 +141,7 @@ body{
 }
 
 #block1{
-    margin-left: 15vw;
+    /* margin-left: 15vw; */
     margin-right: 8vw;
 }
 
@@ -201,6 +205,20 @@ body{
     align-items: center;
 }
 
+.kost{
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#b0{
+    margin-left: 8vw;
+}
+
 @media screen and (max-width:900px) {
     .title{
         margin-bottom: 0;
@@ -225,5 +243,19 @@ body{
 
     .nickname{
         font-size: 4vw;
+    }
+    
+    #b0{
+        margin-left: 7.5vw;
+    }
+
+    .blocks{
+        flex-direction: row;
+        margin-left: 7.5vw;
+        margin-top: 2vh;
+    }
+
+    .kost{
+        flex-direction: column;
     }
 }

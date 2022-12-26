@@ -328,7 +328,7 @@ body{
 }
 
 .pre{
-    width: 40vw;
+    width: 35vw;
     /* height: 100vh; */
     margin-left: 15vw;
 }
@@ -336,10 +336,10 @@ body{
 .about{
     width: 40vw;
     margin-right: 15vw;
-    /* display: flex; */
-    /* flex-direction: column;
+    display: flex;
+    flex-direction: column;
     justify-content: left;
-    align-items: flex-start; */
+    align-items: flex-start;
     overflow-wrap:break-word;
 }
 
