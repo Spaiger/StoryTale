@@ -56,6 +56,13 @@ $res = mysqli_query($connection, "SELECT * from main_story_data where id_story =
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $name ?></title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../icon/favicon-16x16.png">
+    <link rel="manifest" href="../../icon/site.webmanifest">
+    <link rel="mask-icon" href="../../icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="storypage.css">
     <link rel="stylesheet" href="../footer.css">
     <link rel="stylesheet" href="../menustyle.css">
@@ -67,16 +74,16 @@ $res = mysqli_query($connection, "SELECT * from main_story_data where id_story =
 </head>
 <body>
     <script src="storypage.js"></script>
-    <div id="back">
+    <!-- <div id="back">
         <div id="confirm">
-            <!-- <div id="knopka">&#128938;</div> -->
+            <div id="knopka">&#128938;</div>
             <div id="question">Вы уверенны что хотите удалить эту историю?</div>
             <div id="yorn">
                 <div id="Yes">Да</div>
                 <div id="No" onclick="retur()">Нет</div>
             </div>
         </div>
-    </div>
+    </div> -->
     <?php include '../menu.php'; ?>
     <div class="con" id = "conn">
         <div class="content">
