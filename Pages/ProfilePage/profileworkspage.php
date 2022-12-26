@@ -10,7 +10,12 @@ $admin = false;
 if (isset($_SESSION['admin'])) {
     $admin = true;
 }
-
+$author = false;
+if(isset($_GET["id_user"]) && isset($_SESSION['user'])){
+    if ($_GET["id_user"] == $_SESSION['user']){
+        $author = true;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,21 +35,8 @@ if (isset($_SESSION['admin'])) {
     <link rel="stylesheet" href="profileworks.css">
     <link rel="stylesheet" href="../footer.css">
     <link rel="stylesheet" href="../menustyle.css">
-    <script src="jquery-3.6.2.min.js" type="text/javascript">
-
-    </script>
-    <script>
-        function one(id) {
-            $.ajax({
-                url: 'ajax.php',
-                method: 'get',
-                dataType: 'html',
-                data: {
-                    "id_story": id
-                },
-            });
-        }
-    </script>
+   
+   
 </head>
 
 <body>
@@ -80,9 +72,12 @@ if (isset($_SESSION['admin'])) {
         <div class="content">
             <?php include '../appbar.php'; ?>
             <!-- <div class="input"><input type="text" class="search"></div> -->
-            <div class="pipi">
+            <div class="pipi" >
                 <!--<div class="NewStory">+</div>-->
                 <div class="title">Все работы</div>
+                <div class="NewStory"  onclick="location.href='../StoryCreatePages/story_create_main_page.php';">
+                    +
+                    </div>
             </div>
             <?php
             $id = $_GET["id_user"];
@@ -111,7 +106,7 @@ if (isset($_SESSION['admin'])) {
                                 <div class="description"><?php echo $ans[$i - 1]["description"]; ?> </div>
                             </div>
                         </div>
-                        <?php if ($admin) { ?>
+                        <?php if ($admin || $author) { ?>
                             <div class="admin">
                                 <!--<div class="NewStory" onclick="location.href='../StoryCreatePages/delete.php?id_story=<?php //echo $ans[$i - 1]['id_story'] 
                                                                                                                             ?>';">&#128465;</div>-->
