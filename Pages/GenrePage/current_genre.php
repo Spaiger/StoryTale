@@ -127,7 +127,6 @@ if (isset($_SESSION['admin'])) {
 
             <?php
                 }
-
                 echo '</div>';
             }
             ?>

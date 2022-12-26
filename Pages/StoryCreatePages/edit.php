@@ -6,6 +6,7 @@ $id = $_SESSION["user"];
 
 var_dump($_POST);
 $id_story = $_POST["id_story"];
+var_dump($id_story);
 $name = $_POST["name"];
 $genre = $_POST["genre"];
 $description = (string)$_POST["description"];
@@ -21,7 +22,7 @@ $stmt = $connection->prepare("update  main_story_data set name = ? , genre = ?,d
 $stmt->bind_param("ssssi",$name,$genre,$description,$comment,$id_story);
 $stmt->execute();
 if($stmt){
-   
+   // var_dump($stmt);
     header("location: ../ProfilePage/profile.php?id_user=$id");
 }
 /*$query = "UPDATE main_story_data

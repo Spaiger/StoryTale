@@ -6,23 +6,24 @@ if (!isset($_SESSION['user'])) {
 } else if (isset($_SESSION['user'])) {
     if(!isset($_SESSION["admin"])){
         if ($_SESSION['user'] != (int)$_GET["id_user"] ) {
-            echo "fdfdfdfd";
+        // echo "fdfdfdfd";
     
             header("location: ../../index.php");
         }
     }
     
 }
-
+//var_dump($_SESSION);
 if(isset($_SESSION["admin"])){
     $id_user = null;
+    $admin = true;
 }
 else{
     $id_user = $_GET["id_user"];
 }
-$id_story = $_GET["id_story"];
-
-$res = mysqli_query($connection, "select * from main_story_data where id_story='$id_story';");
+$id_story1 = $_GET["id_story"];
+//var_dump($id_story1);
+$res = mysqli_query($connection, "select * from main_story_data where id_story='$id_story1';");
 
 $res = $res->fetch_assoc();
 
@@ -69,7 +70,7 @@ $avatar = $res["avatar"];
 
                     <div class="in">
                        
-                    <input type="hidden" name="id_story" value="<?php echo $id_story ?>">
+                    <input type="hidden" name="id_story" value="<?php echo $id_story1 ?>">
                         <div class="ni2">
                         <?php //echo $avatar; 
                             ?>
