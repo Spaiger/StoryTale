@@ -20,7 +20,10 @@ if (isset($_GET["id_user"])) {
               header("location: ../../logout.php");
     }
 }
-
+$admin = false;
+if(isset($_SESSION["admin"])){
+    $admin = true;
+}
 $dataName = mysqli_query($connection, "SELECT nickname from user_data where id_user = '$id_get'");
 $name = $dataName->fetch_array()["nickname"];
 
@@ -98,10 +101,14 @@ $id_story  = $res->fetch_array()["id_story"];
                 <!-- <?php echo '<div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы</div>'; ?> -->
                 <?php
                 if ($equel) {echo '
-                    <div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы</div>
-                    <div class="NewStory"  onclick="location.href=\'../StoryCreatePages/story_create_main_page.php\';">
+                    <div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы</div>'
+                    ?>
+                    <?php if (!$admin) { ?>
+                    <div class="NewStory"  onclick="location.href='../StoryCreatePages/story_create_main_page.php';">
                     +
-                    </div>';
+                    </div>
+                    <?php
+                    }
                 }
                 else{
                     echo '<div class="button" margin-left = "0" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы</div>';
@@ -110,10 +117,10 @@ $id_story  = $res->fetch_array()["id_story"];
             </div>
             <div class="profile">
                 <div class="desc">
-                    <div id="avatar"><img src=""></div>
+                    <div id="avatar"><img src="../../image/user/default.png"></div>
                     <!-- <div id="followers">
                         <p>Подписчики:</p>
-                        <p><?php echo $followers ?> &#9829;</p>
+                        <p><?php //echo $followers ?> &#9829;</p>
                     </div> -->
                 </div>
                 <div class="name">
