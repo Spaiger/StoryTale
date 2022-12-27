@@ -34,11 +34,12 @@ if (isset($_SESSION['user'])) {
             </div>
             <form action="signin.php" method="post">
                 <div class="in">
-                    <div class="ni2"id="n1"><input type="password" name="password" class="input" id="password" placeholder="Password" required></div>
+                <div class="ni2"id="n1"><input type="email" name="email" class="input" id="email" placeholder="Email" required></div>
                 </div>
                 <!--<div class="alertmsg">Неправильная почта или пароль</div>-->
                 <div class="in">
-                <div class="ni2"id="n"><input type="email" name="email" class="input" id="email" placeholder="Email" required></div>
+                    
+                    <div class="ni2"id="n"><input type="password" name="password" class="input" id="password" placeholder="Password" required></div>
                 </div>
                 <div class="alertmsg"><?php 
                 if(isset($_SESSION['msg'])){

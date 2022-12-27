@@ -134,23 +134,26 @@ body{
     }
 
     #password{
-        margin-top: 20vh;
+       /* margin-top: 20vh;*/
         margin-left: 0;
     }
 
     .input{
         width: 50vw;
         margin-left: 0;
-        margin-top: 20vh;
+        /* margin-top: 20vh; */
     }
 
     #check1{
         /* width: 50vw; */
         margin-left: 0;
-        margin-top: 20vh;
+        /* margin-top: 20vh; */
         margin-right: 0;
     }
-
+    .ni2{
+        max-height: 6vh;
+        margin-bottom: 2vh;
+    }
     #check2{
         margin-left: 0;
         font-size: 3vw;

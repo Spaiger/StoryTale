@@ -61,7 +61,7 @@ $description = $res["description"];
                 <div class="commentWrap">
                     <div class="ni2">
                         <div id="de3">Содержимое</div>
-                        <textarea name="description" maxlength="100" class="comment" form="usrform" id = "val" required>
+                        <textarea name="description" maxlength="1000" class="comment" form="usrform" id = "val" required>
                             <?php echo $description; ?>
                         </textarea>
                     </div>
