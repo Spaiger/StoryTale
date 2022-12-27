@@ -5,6 +5,7 @@ if (isset($_GET["id_user"])) {
     if (intval($_GET["id_user"]) != $_GET["id_user"]) {
         header("location: ../../logout.php");
     }
+    $id_user_profileworkpage_get = $_GET["id_user"];
 }
 $admin = false;
 if (isset($_SESSION['admin'])) {
@@ -75,9 +76,11 @@ if(isset($_GET["id_user"]) && isset($_SESSION['user'])){
             <div class="pipi" >
                 <!--<div class="NewStory">+</div>-->
                 <div class="title">Все работы</div>
+                <?php if($author){ ?>
                 <div class="NewStory"  onclick="location.href='../StoryCreatePages/story_create_main_page.php';">
                     +
                     </div>
+                <?php }?>
             </div>
             <?php
             $id = $_GET["id_user"];

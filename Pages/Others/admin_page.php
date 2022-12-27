@@ -13,7 +13,9 @@ include '../../db.php';
 
 $res = mysqli_query($connection, "SELECT name,description from main_story_data where id_story = $id_get");
 $res = $res->fetch_assoc();
-//var_dump($id_get);
+if(!$res){
+    header('Location: ../../index.php');
+}
 $name = $res["name"];
 $description = $res["description"];
 ?>

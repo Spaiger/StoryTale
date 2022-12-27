@@ -10,23 +10,25 @@ if (isset($_SESSION["user"]) && isset($_GET["id_user"])) {
     $equel = $_GET["id_user"] == $_SESSION["user"];
     if (intval($_GET["id_user"]) != $_GET["id_user"]) {
         //echo 'sessia';
-                header("location: ../../logout.php");
+        header("location: ../../logout.php");
     }
 }
 if (isset($_GET["id_user"])) {
     $id_get = $_GET["id_user"];
     if (intval($_GET["id_user"]) != $_GET["id_user"]) {
         //echo 'user';
-              header("location: ../../logout.php");
+        header("location: ../../logout.php");
     }
 }
 $admin = false;
-if(isset($_SESSION["admin"])){
+if (isset($_SESSION["admin"])) {
     $admin = true;
 }
 $dataName = mysqli_query($connection, "SELECT nickname from user_data where id_user = '$id_get'");
 $name = $dataName->fetch_array()["nickname"];
-
+if(!$name){
+    header("location: ../../index.php");
+}
 $req = mysqli_query($connection, "SELECT avatar,count_publish from user_data where id_user = '$id_get'");
 
 
@@ -62,9 +64,8 @@ $id_story  = $res->fetch_array()["id_story"];
     <link rel="stylesheet" href="../footer.css">
     <link rel="stylesheet" href="../menustyle.css">
     <?php
-    if ($equel){
-        
-    }else{
+    if ($equel) {
+    } else {
         echo '<link rel="stylesheet" href="trash.css">';
     }
     ?>
@@ -72,14 +73,50 @@ $id_story  = $res->fetch_array()["id_story"];
 
 <body>
     <script src="profile.js"></script>
-    <?php include '../menu.php'; ?>
-    <div class="con" id = "conn">
+    <div id="butmenu">
+        <div id="cl" onclick="clo()">&#215;</div>
+        <div id="mu">
+            <div class="appbar1">
+                <?php
+                include "../../db.php";
+                $res = mysqli_query($connection, "select id_story from main_story_data order by rand() limit 1");
+                $id_story  = $res->fetch_array()["id_story"];
+                $connection->close();
+                ?>
+                <div class="button" id="but1" onclick="location.href='../GenrePage/genre_page.php';">Жанры</div>
+                <div class="button" id="but2" onclick="location.href='../AuthorsPage/authors_page.php';">Авторы</div>
+                <div class="button" id="but3" onclick="location.href='../PopularPage/popular_page.php';">Популярное</div>
+                <div class="button" id="but4" onclick="location.href='../ProfilePage/storypage.php<?php echo '?id_story=' . $id_story . '&type=rand' ?>';">Случайная работа</div>
+                <?php
+                if (isset($_SESSION["user"]) && isset($_GET["id_user"])) {
+                    $id_sess = $_SESSION["user"];
+                    if ($id_sess == $id_get) {
+                        echo '<div class="button" id="but5" onclick="location.href=\'../../logout.php\';">Выйти</div>';
+                    } else {
+                        echo '<div class="button" id="but5" onclick="location.href=\'profile.php?id_user=' . $id_sess . '\';">Профиль</div>';
+                    }
+                } else {
+                    echo '<div class="button" id="but5" onclick="location.href=\'../AuthorizationPage/authorization_page.php\';">Войти</div>';
+                }
+
+                ?>
+            </div>
+            <div class="footer1">
+                <div class="news1">
+                    <div><a class="link" href="../Others/Rules.php">Правила</a></div>
+                    <div><a class="link" href="../../index.php">Новости сайта</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="three" id="mb" onclick="menu()">&#9776;</div>
+    <div class="con" id="conn">
         <div class="content">
             <div class="appbar">
                 <div class="button" id="but1" onclick="location.href='../GenrePage/genre_page.php';">Жанры</div>
                 <div class="button" id="but2" onclick="location.href='../AuthorsPage/authors_page.php';">Авторы</div>
                 <div class="button" id="but3" onclick="location.href='../PopularPage/popular_page.php';">Популярное</div>
-                <div class="button" id="but4" onclick="location.href='../ProfilePage/storypage.php<?php echo '?id_story='.$id_story.'&type=rand' ?>';">Случайная работа</div>
+                <div class="button" id="but4" onclick="location.href='../ProfilePage/storypage.php<?php echo '?id_story=' . $id_story . '&type=rand' ?>';">Случайная работа</div>
                 <?php
                 if (isset($_SESSION["user"]) && isset($_GET["id_user"])) {
                     $id_sess = $_SESSION["user"];
@@ -100,17 +137,17 @@ $id_story  = $res->fetch_array()["id_story"];
             <div class="pipi" justify-content="center" width="80vw" margin-left="0">
                 <!-- <?php echo '<div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы</div>'; ?> -->
                 <?php
-                if ($equel) {echo '
+                if ($equel) {
+                    echo '
                     <div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы</div>'
-                    ?>
+                ?>
                     <?php if (!$admin) { ?>
-                    <div class="NewStory"  onclick="location.href='../StoryCreatePages/story_create_main_page.php';">
-                    +
-                    </div>
-                    <?php
+                        <div class="NewStory" onclick="location.href='../StoryCreatePages/story_create_main_page.php';">
+                            +
+                        </div>
+                <?php
                     }
-                }
-                else{
+                } else {
                     echo '<div class="button" margin-left = "0" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы</div>';
                 }
                 ?>
@@ -120,7 +157,8 @@ $id_story  = $res->fetch_array()["id_story"];
                     <div id="avatar"><img id="im" src="../../image/user/default.png"></div>
                     <!-- <div id="followers">
                         <p>Подписчики:</p>
-                        <p><?php //echo $followers ?> &#9829;</p>
+                        <p><?php //echo $followers 
+                            ?> &#9829;</p>
                     </div> -->
                 </div>
                 <div class="name">

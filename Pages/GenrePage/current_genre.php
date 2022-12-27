@@ -1,22 +1,29 @@
 <?php
 session_start();
-
+$flag = false;
 if (isset($_GET["genre"])) {
     $get_genre = $_GET["genre"];
 
     if ($get_genre == "detective") {
         $value = "Детективы";
+        $flag = true;
     }
     if ($get_genre == "science_fiction") {
         $value = "Научная фантастика";
+        $flag = true;
     }
     if ($get_genre == "fantasy") {
         $value = "Фентези";
+        $flag = true;
     }
     if ($get_genre == "dramaturg") {
         $value = "Драматургия";
+        $flag = true;
     }
 } else {
+    header("location: genre_page.php");
+}
+if(!$flag){
     header("location: genre_page.php");
 }
 $admin = false;

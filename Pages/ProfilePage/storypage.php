@@ -24,6 +24,10 @@ include '../../db.php';
 
 $res = mysqli_query($connection, "SELECT * from main_story_data where id_story ='$id_story_get'");
 $res = $res->fetch_assoc();
+if(!$res){
+    header("location: ../../index.php");
+}
+
 $name = $res["name"];
 $annotation = $res["description"];
 $description = $res["comment"];
@@ -110,7 +114,7 @@ mysqli_query($connection, "UPDATE  main_story_data set visit = visit+1 where id_
             include '../appbar.php';
             ?>
             <div id="ns">
-                <div class="NewStory" id="ns1" onclick="location.href='../ProfilePage/storypage.php<?php echo '?id_story=' . $id_story_get . '&type=rand' ?>';">&#8635;</div>
+                <div class="NewStory" id="ns1" onclick="location.href='../ProfilePage/storypage.php<?php echo '?id_story=' . $id_appbar . '&type=rand' ?>';">&#8635;</div>
                 <?php if ($flag) { ?>
                     <div class="NewStory" onclick="one(<?php echo $id_story_get ?>)">&#128465;</div>
                 <?php } ?>
