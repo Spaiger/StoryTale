@@ -76,7 +76,7 @@ if(isset($_GET["id_user"]) && isset($_SESSION['user'])){
             <div class="pipi" >
                 <!--<div class="NewStory">+</div>-->
                 <div class="title">Все работы</div>
-                <?php if($author){ ?>
+                <?php if($author && !$admin){ ?>
                 <div class="NewStory"  onclick="location.href='../StoryCreatePages/story_create_main_page.php';">
                     +
                     </div>

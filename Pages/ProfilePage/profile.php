@@ -138,9 +138,11 @@ $id_story  = $res->fetch_array()["id_story"];
                 <!-- <?php echo '<div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы</div>'; ?> -->
                 <?php
                 if ($equel) {
-                    echo '
-                    <div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы</div>'
-                ?>
+                    if (!$admin) {
+                        echo '
+                    <div class="button" onclick="location.href=\'profileworkspage.php?id_user=' . $id_get . '\'";>Все работы</div>';
+                    
+                    }?>
                     <?php if (!$admin) { ?>
                         <div class="NewStory" onclick="location.href='../StoryCreatePages/story_create_main_page.php';">
                             +
@@ -163,6 +165,7 @@ $id_story  = $res->fetch_array()["id_story"];
                 </div>
                 <div class="name">
                     <p id="username"><?php echo $name ?></p>
+                    <?php if(!$admin){?>
                     <p id="workscount">Количество работ:
                         <?php
                         echo '<a id="count" href="profileworkspage.php?id_user=' . $id_get . '">';
@@ -170,6 +173,7 @@ $id_story  = $res->fetch_array()["id_story"];
                         echo $count_publish ?>
                         </a>
                     </p>
+                    <?php } ?>
                 </div>
             </div>
         </div>
