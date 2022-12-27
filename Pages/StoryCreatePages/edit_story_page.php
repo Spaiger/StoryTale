@@ -81,7 +81,7 @@ $avatar = $res["avatar"];
                         </div>
                     </div>
                     <div class="in">
-                        <div class="ni2"><div id="de">Назание</div><input type="text" required name="name" class="input" id="name" value="<?php echo $name ?>"></div>
+                        <div class="ni2"><div id="de">Назание</div><input maxlength="30" type="text" required name="name" class="input" id="name" value="<?php echo $name ?>"></div>
                     </div>
                     <div class="in">
                         <div class="ni2">
@@ -95,12 +95,12 @@ $avatar = $res["avatar"];
                         </div>
                     </div>
                     <div class="in">
-                        <div class="ni2"><div id="de2">Описание</div><input  value="<?php echo $description ?>"required style=" background-color:#ffffff; height: 8vh" type="text" name="description" class="input" id="description"></div>
+                        <div class="ni2"><div id="de2">Описание</div><input maxlength="150"  value="<?php echo $description ?>"required style=" background-color:#ffffff; height: 8vh" type="text" name="description" class="input" id="description"></div>
                     </div>
                 </form>
                 <div class="commentWrap">
                     <div class="ni2">
-                    <div id="de3">Содержимое</div><textarea required name="comment" class="comment" id ="val"form="usrform"><?php echo $comment ?></textarea></div>
+                    <div id="de3">Содержимое</div><textarea maxlength="500"  required name="comment" class="comment" id ="val"form="usrform"><?php echo $comment ?></textarea></div>
                 </div>
             </div>
 

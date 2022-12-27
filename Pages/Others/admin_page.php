@@ -53,15 +53,15 @@ $description = $res["description"];
 -->
                     <div class="in">
                         <div class="ni2">
-                            <div id="de">Назание</div>
-                            <input type="text" name="name" class="input" id="name" required value="<?php echo $name;?>">
+                            <div id="de">Название</div>
+                            <input type="text" maxlength="30" name="name" class="input" id="name" required value="<?php echo $name;?>">
                         </div>
                     </div>
                 </form>
                 <div class="commentWrap">
                     <div class="ni2">
                         <div id="de3">Содержимое</div>
-                        <textarea name="description" class="comment" form="usrform" id = "val" required>
+                        <textarea name="description" maxlength="100" class="comment" form="usrform" id = "val" required>
                             <?php echo $description; ?>
                         </textarea>
                     </div>

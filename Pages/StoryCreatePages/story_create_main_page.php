@@ -46,7 +46,7 @@ if (isset($_SESSION['user'])) {
                     <div class="in">
                         <div class="ni2">
                             <div id="de">Назание</div>
-                            <input type="text" name="name" class="input" id="name" required>
+                            <input type="text" maxlength="30" name="name" class="input" id="name" required>
                         </div>
                     </div>
                     <div class="in">
@@ -63,14 +63,14 @@ if (isset($_SESSION['user'])) {
                     <div class="in">
                         <div class="ni2">
                             <div id="de2">Описание</div>
-                            <input style=" background-color:#EFE8E2;" type="text" name="description" class="input" id="description" required>
+                            <input style=" background-color:#EFE8E2;" type="text" maxlength="150" name="description" class="input" id="description" required>
                         </div>
                     </div>
                 </form>
                 <div class="commentWrap">
                     <div class="ni2">
                         <div id="de3">Содержимое</div>
-                        <textarea name="comment" class="comment" form="usrform" id = "val" required></textarea>
+                        <textarea name="comment" maxlength="500" class="comment" form="usrform" id = "val" required></textarea>
                     </div>
                 </div>
             </div>

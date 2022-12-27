@@ -36,13 +36,13 @@ if (isset($_SESSION['user'])) {
             <form action="reg.php" method="post" class="form">
                 <div class="in">
                     <div class="ni2">
-                        <input type="text" name="nickname" class="input" id="Text" placeholder="Имя" required>
+                        <input type="text" name="nickname" maxlength="30" class="input" id="Text" placeholder="Имя" required>
                     </div>
                  <!--   <div class="alertmsg">Неправильная почта или пароль</div>-->
                 </div>
                 <div class="in">
                     <div class="ni2">
-                        <input type="email" name="email" class="input" id="email" placeholder="Почта" required>
+                        <input type="email" maxlength="255" name="email" class="input" id="email" placeholder="Почта" required>
                     </div>
                 <!--    <div class="alertmsg">Неправильная почта или пароль</div>-->
                 </div>
