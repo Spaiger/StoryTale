@@ -1,38 +1,43 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset = "utf8" />
-        <title>Бесконечный скроллинг с JavaScript</title>
-    </head>
-    <body>
-        <div id="infinite-scroll">
-            <div>
-     <script>
-       for( let i = 0; i < 100; i++ )
-         document.write("<div>Случайный текст или еще, что то</div>");
-     </script>
-           </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="Test.css">
+</head>
+<body>
+    <script src="MainPage.js"></script>
+    <div class="con">
+        <div class="content">
+            <div class="appbar">
+                <div class="button" id="but1" onclick="location.href='../GenrePage/genre_page.php';">Жанры</div>
+                <div class="button" id="but2" onclick="location.href='../AuthorsPage/authors_page.php';">Авторы</div>
+                <div class="button" id="but3" onclick="location.href='../PopularPage/popular_page.php';">Популярное</div>
+                <div class="button" id="but4" onclick="location.href='../RandomWorkPage/random_work_page.php';">Случайная работа</div>
+                <div class="button" id="but5" onclick="location.href='../AuthorizationPage/authorization_page.php';">Профиль</div>
+            </div>
+            <!-- <div class="input"><input type="text" class="search"></div> -->
+            <div class="pipi">
+                <div class="button" onclick="">Все работы</div>
+                <div class="NewStory">+</div>
+            </div>
+            <div class="profile">
+                <div class="desc">
+                    <div id="avatar"></div>
+                    <div id="followers">
+                        <p>Подписчики:</p>
+                        <p>123 &#9829;</p>
+                    </div>
+                </div>
+                <div class="name">
+                    <p id="username">Имя пользователя</p>
+                    <p id="workscount">Количество работ: <a id="count"></a></p>
+                </div>
+            </div>
         </div>
-        <script>
-       
-            window.addEventListener("scroll", function(){
-           
-                var block = document.getElementById('infinite-scroll');
-                var counter = 1;
-               
-                var contentHeight = block.offsetHeight;      // 1) высота блока контента вместе с границами
-                var yOffset       = window.pageYOffset;      // 2) текущее положение скролбара
-                var window_height = window.innerHeight;      // 3) высота внутренней области окна документа
-                var y             = yOffset + window_height;
-               
-                // если пользователь достиг конца
-                if(y >= contentHeight)
-                {
-                    //загружаем новое содержимое в элемент
-                    block.innerHTML = block.innerHTML + "<div>Случайный текст или еще, что то</div>";
-                }
-            });
-           
-        </script>
-    </body>
+        <div class="footer"></div>
+    </div>
+</body>
 </html>

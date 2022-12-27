@@ -37,11 +37,12 @@
                 header("Location: authorization_page.php");
             die;
             } else {
-                $idRes = mysqli_query($connection, "select id_user from user_data where email = '$userEmail'");
-                $id = $idRes->fetch_assoc();
-               
-                $_SESSION["user"] = $id["id_user"];
-            
+                $idRes = mysqli_query($connection, "select id_user,status from user_data where email = '$userEmail'");
+                $res = $idRes->fetch_assoc();
+                
+                $_SESSION["user"] = $res["id_user"];
+                if($res["status"] == 1)
+                    $_SESSION["admin"] = true;
                 unset($_SESSION['msg']);
                 header('Location: ../../index.php');
             }

@@ -1,33 +1,68 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genres</title>
+    <title>Жанры</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../icon/favicon-16x16.png">
+    <link rel="manifest" href="../../icon/site.webmanifest">
+    <link rel="mask-icon" href="../../icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="GenrePage.css">
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../menustyle.css">
+    <?php
+    if (isset($_SESSION['user'])) {
+        echo '<link rel="stylesheet" href="../../styles/austyle.css">';
+    }
+    ?>
 </head>
+
 <body>
-    <script src="MainPage.js"></script>
-    <div class="con">
+    <script src="genre_page.js"></script>
+    <?php include '../menu.php'; ?>
+    <div class="con" id = "conn">
         <div class="content">
-            <div class="appbar">
-                <div class="button" id="but1" onclick="location.href='../GenrePage/genre_page.php';">Жанры</div>
-                <div class="button" id="but2" onclick="location.href='../AuthorsPage/authors_page.php';">Авторы</div>
-                <div class="button" id="but3" onclick="location.href='../PopularPage/popular_page.php';">Популярное</div>
-                <div class="button" id="but4" onclick="location.href='../RandomWorkPage/random_work_page.php';">Случайная работа</div>
-                <div class="button" id="but5" onclick="location.href='../AuthorizationPage/authorization_page.php';">Профиль</div>
-            </div>
-            <div class="input"><input type="text" class="search"></div>
+            <?php include '../appbar.php' ?>
+            <!-- <div class="input"><input type="text" class="search"></div> -->
             <div class="pipi">
-                <div class="NewStory">+</div>
+                <!-- <div class="NewStory">+</div> -->
                 <div class="title">Жанры</div>
             </div>
+            <?php include '../../db.php'; ?>
             <div class="blocks">
-                <div class="stories" id="block1">s</div>
-                <div class="stories" id="block2">s</div>
-                <div class="stories" id="block3">s</div>
-                <div class="stories" id="block4">s</div>
+                <div class="stories" id="block1"  onclick="location.href='current_genre.php?genre=detective'">
+                    <div class="containerGenre">
+                        <div class="avatar"><img src="../../image/genre/detective.png" alt="детективы" class="image"></div>
+                        <div class="name">Детективы</div>
+                    </div>
+                </div>
+                <div class="stories" id="block2" onclick="location.href='current_genre.php?genre=dramaturg'">
+                    <div class="containerGenre">
+                        <div class="avatar"><img src="../../image/genre/dramaturg.png" alt="драматургия" class="image"></div>
+                        <div class="name">Драматургия</div>
+                    </div>
+                </div>
+                <div class="stories" id="block3" onclick="location.href='current_genre.php?genre=fantasy'">
+                    <div class="containerGenre">
+                        <div class="avatar"><img src="../../image/genre/fantasy.png" alt="фентези" class="image"></div>
+                        <div class="name">Фентези</div>
+                    </div>
+                </div>
+                <div class="stories" id="block4" onclick="location.href='current_genre.php?genre=science_fiction'">
+                    <div class="containerGenre">
+                        <div class="avatar"><img src="../../image/genre/science_fiction.png" alt="научная фантастика" class="image"></div>
+                        <div class="name">Научная <br> фантастика</div>
+                    </div>
+                </div>
             </div>
             <!-- <div class="blocks">
                 <div class="stories" id="block1">s</div>
@@ -36,7 +71,10 @@
                 <div class="stories" id="block4">s</div>
             </div> -->
         </div>
-        <div class="footer"></div>
+        <?php
+        include "../footer.php";
+        ?>
     </div>
 </body>
+
 </html>

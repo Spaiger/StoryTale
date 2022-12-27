@@ -1,0 +1,170 @@
+#cl{
+    display: none;
+}
+
+#mu{
+    display: none;
+}
+
+.three{
+    align-items: center;
+    justify-content: center;
+    display: none !important;
+    /* margin-left: 8vw; */
+    /* margin-bottom: 11vh; */
+    color: #FFEFCB;
+    background-color: #DDBFA1;
+    width: 7vw;
+    font-size: 6vmin;
+    z-index: 990;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #BA8C76;
+    margin: 0;
+    padding: 0;
+    position:sticky;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #FFEFCB;
+    backdrop-filter: blur(10px);
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-top: 5vh;
+    align-items: center;
+    height: 90vh;
+    width: 80vw;
+    border-radius: 0.6vw 0.6vw 0px 0px;
+    flex: 1 0 auto;
+    overflow-x: hidden;
+}
+
+.con{
+    display: flex !important;
+    flex-direction: column;
+    min-height: 100vh;
+    z-index: 200;
+    overflow-x: hidden;
+}
+
+.button{
+    font-size: 1.5vw;
+    height: auto;
+    width: auto;
+    white-space: nowrap;
+    background-color: #DDBFA1;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    margin-top: 4.2vh;
+    margin-bottom: 4.2vh;
+    border-radius: 0.3vw;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
+    overflow-x: hidden;
+}
+.three{
+    align-items: center;
+    justify-content: center;
+    display: none !important;
+    /* margin-left: 8vw; */
+    /* margin-bottom: 11vh; */
+    color: #FFEFCB;
+    background-color: #DDBFA1;
+    width: 7vw;
+    font-size: 6vmin;
+    z-index: 990;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 900px){
+    .three{
+        display: flex !important;
+    }
+
+    .appbar{
+        display: none;
+        overflow-x: hidden;
+    }
+
+    #cl{
+        display: flex;
+        font-size: 6vmin;
+        font-family: one;
+        text-align: center;
+        color: #FFEFCB;
+        background-color: #DDBFA1;
+        width: 7vw;
+        height: 4.5vh;
+        margin-left: 93vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #gl{
+        text-align: center;
+        margin: 0;
+    }
+
+    #mu{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 91vh;
+    }
+
+    .content{
+        border-radius: 1vw 1vw 1vw 1vw;
+        margin-bottom: 5vw;
+    }
+
+    #butmenu{
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background-color: #FFEFCB;
+        z-index: 9990;
+    }
+
+    .appbar1{
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+    }
+
+    .button{
+        margin-left: 5vw;
+        font-size: 5vw;
+    }
+
+    #but1,#but3,#but5{
+        margin-left: 4vw;
+        margin-right: 0;
+    }
+
+    .news1{
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
